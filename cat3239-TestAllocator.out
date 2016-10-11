@@ -1,0 +1,73 @@
+Running main() from gtest_main.cc
+[==========] Running 20 tests from 7 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllocator1/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllocator1/0.test_1
+[       OK ] TestAllocator1/0.test_1 (10 ms)
+[ RUN      ] TestAllocator1/0.test_10
+[       OK ] TestAllocator1/0.test_10 (4 ms)
+[----------] 2 tests from TestAllocator1/0 (21 ms total)
+
+[----------] 2 tests from TestAllocator1/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllocator1/1.test_1
+[       OK ] TestAllocator1/1.test_1 (5 ms)
+[ RUN      ] TestAllocator1/1.test_10
+[       OK ] TestAllocator1/1.test_10 (4 ms)
+[----------] 2 tests from TestAllocator1/1 (9 ms total)
+
+[----------] 2 tests from TestAllocator1/2, where TypeParam = Allocator<int, 100ul>
+[ RUN      ] TestAllocator1/2.test_1
+[       OK ] TestAllocator1/2.test_1 (8 ms)
+[ RUN      ] TestAllocator1/2.test_10
+[       OK ] TestAllocator1/2.test_10 (3 ms)
+[----------] 2 tests from TestAllocator1/2 (11 ms total)
+
+[----------] 2 tests from TestAllocator1/3, where TypeParam = Allocator<double, 100ul>
+[ RUN      ] TestAllocator1/3.test_1
+[       OK ] TestAllocator1/3.test_1 (8 ms)
+[ RUN      ] TestAllocator1/3.test_10
+[       OK ] TestAllocator1/3.test_10 (4 ms)
+[----------] 2 tests from TestAllocator1/3 (12 ms total)
+
+[----------] 8 tests from TestAllocator2
+[ RUN      ] TestAllocator2.const_index_1
+[       OK ] TestAllocator2.const_index_1 (2 ms)
+[ RUN      ] TestAllocator2.index_1
+[       OK ] TestAllocator2.index_1 (2 ms)
+[ RUN      ] TestAllocator2.const_index_2
+[       OK ] TestAllocator2.const_index_2 (2 ms)
+[ RUN      ] TestAllocator2.index_2
+[       OK ] TestAllocator2.index_2 (2 ms)
+[ RUN      ] TestAllocator2.split
+[       OK ] TestAllocator2.split (4 ms)
+[ RUN      ] TestAllocator2.nosplit
+[       OK ] TestAllocator2.nosplit (6 ms)
+[ RUN      ] TestAllocator2.left_merge
+[       OK ] TestAllocator2.left_merge (4 ms)
+[ RUN      ] TestAllocator2.right_merge
+[       OK ] TestAllocator2.right_merge (4 ms)
+[----------] 8 tests from TestAllocator2 (26 ms total)
+
+[----------] 2 tests from TestAllocator3/0, where TypeParam = Allocator<int, 100ul>
+[ RUN      ] TestAllocator3/0.test_1
+[       OK ] TestAllocator3/0.test_1 (3 ms)
+[ RUN      ] TestAllocator3/0.test_10
+[       OK ] TestAllocator3/0.test_10 (3 ms)
+[----------] 2 tests from TestAllocator3/0 (6 ms total)
+
+[----------] 2 tests from TestAllocator3/1, where TypeParam = Allocator<double, 100ul>
+[ RUN      ] TestAllocator3/1.test_1
+[       OK ] TestAllocator3/1.test_1 (3 ms)
+[ RUN      ] TestAllocator3/1.test_10
+[       OK ] TestAllocator3/1.test_10 (3 ms)
+[----------] 2 tests from TestAllocator3/1 (6 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 7 test cases ran. (117 ms total)
+[  PASSED  ] 20 tests.
+File 'Allocator.h'
+Lines executed:90.41% of 73
+Branches executed:83.56% of 146
+Taken at least once:50.68% of 146
+Calls executed:45.80% of 131
+Creating 'Allocator.h.gcov'
