@@ -9,6 +9,7 @@
 // --------
 
 #include <algorithm> // count
+#include <numeric>   // iota
 #include <memory>    // allocator
 #include <vector>    // containers
 
