@@ -243,21 +243,23 @@ TYPED_TEST(TestAllocatorStress1, test_0) {
   const size_type s = 1;
   pointer ptr[1000];
 
-  // Allocate the items in a random order
-  std::vector<int> alloc_order(1000);
-  std::iota(begin(alloc_order), end(alloc_order), 0);
-  std::random_shuffle(begin(alloc_order), end(alloc_order));
-  for (auto it = begin(alloc_order); it != end(alloc_order); ++it) {
-    ptr[*it] = x.allocate(s);
+  // Allocate the items to the pointers
+  for (int i = 0; i < 1000; ++i) {
+    ptr[i] = x.allocate(s);
   }
 
   // Deallocate the items in a random order
   std::vector<int> dealloc_order(1000);
   std::iota(begin(dealloc_order), end(dealloc_order), 0);
   std::random_shuffle(begin(dealloc_order), end(dealloc_order));
-  for (auto it = begin(alloc_order); it != end(alloc_order); ++it) {
+  for (auto it = begin(dealloc_order); it != end(dealloc_order); ++it) {
     x.deallocate(ptr[*it], s);
   }
+
+  // Allocate one item the size of the entire free store - 8
+  const size_type all = 11992 / sizeof(int);
+  pointer p = x.allocate(all);
+  x.deallocate(p, all);
 }
 
 // --------------
