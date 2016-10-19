@@ -178,6 +178,8 @@ TYPED_TEST(TestAllocator3, test_10) {
 // --------------
 // TestAllocator4
 // --------------
+//NOTE: These tests must be friends with Allocator.h
+
 TEST(TestAllocator4, valid1) {
   Allocator<int, 100> y;
   y[0] = 10;
