@@ -243,3 +243,135 @@ TYPED_TEST(TestAllocator5, test_10) {
             --e;
             x.destroy(e);}
         x.deallocate(b, s);}}
+
+// --------------
+// TestAllocator6
+// --------------
+template <typename A>
+struct TestAllocator6 : testing::Test {
+    // --------
+    // typedefs
+    // --------
+
+    typedef          A             allocator_type;
+    typedef typename A::value_type value_type;
+    typedef typename A::size_type  size_type;
+    typedef typename A::pointer    pointer;};
+
+typedef testing::Types<
+            my_allocator<int,    50>,
+            my_allocator<double, 50>>
+        my_types_4;
+
+TYPED_TEST_CASE(TestAllocator6, my_types_4);
+
+TYPED_TEST(TestAllocator6, test_1) {
+    typedef typename TestFixture::allocator_type allocator_type;
+    typedef typename TestFixture::value_type     value_type;
+    typedef typename TestFixture::size_type      size_type;
+    typedef typename TestFixture::pointer        pointer;
+
+          allocator_type x;
+    const size_type      s = 1;
+    const value_type     v = 42;
+    const pointer        p = x.allocate(s);
+    if (p != nullptr) {
+        x.construct(p, v);
+        ASSERT_EQ(v, *p);
+        x.destroy(p);
+        x.deallocate(p, s);}}
+
+TYPED_TEST(TestAllocator6, test_10) {
+    typedef typename TestFixture::allocator_type allocator_type;
+    typedef typename TestFixture::value_type     value_type;
+    typedef typename TestFixture::size_type      size_type;
+    typedef typename TestFixture::pointer        pointer;
+
+          allocator_type x;
+    const size_type      s = 6;
+    const value_type     v = 42;
+    const pointer        b = x.allocate(s);
+    if (b != nullptr) {
+        pointer e = b + s;
+        pointer p = b;
+        try {
+            while (p != e) {
+                x.construct(p, v);
+                ++p;}}
+        catch (...) {
+            while (b != p) {
+                --p;
+                x.destroy(p);}
+            x.deallocate(b, s);
+            throw;}
+        ASSERT_EQ(s, std::count(b, e, v));
+        while (b != e) {
+            --e;
+            x.destroy(e);}
+        x.deallocate(b, s);}}
+
+// --------------
+// TestAllocator7
+// --------------
+template <typename A>
+struct TestAllocator7 : testing::Test {
+    // --------
+    // typedefs
+    // --------
+
+    typedef          A             allocator_type;
+    typedef typename A::value_type value_type;
+    typedef typename A::size_type  size_type;
+    typedef typename A::pointer    pointer;};
+
+typedef testing::Types<
+            my_allocator<int,    2008>,
+            my_allocator<double, 4008>>
+        my_types_5;
+
+TYPED_TEST_CASE(TestAllocator7, my_types_5);
+
+TYPED_TEST(TestAllocator7, test_1) {
+    typedef typename TestFixture::allocator_type allocator_type;
+    typedef typename TestFixture::value_type     value_type;
+    typedef typename TestFixture::size_type      size_type;
+    typedef typename TestFixture::pointer        pointer;
+
+          allocator_type x;
+    const size_type      s = 1;
+    const value_type     v = 42;
+    const pointer        p = x.allocate(s);
+    if (p != nullptr) {
+        x.construct(p, v);
+        ASSERT_EQ(v, *p);
+        x.destroy(p);
+        x.deallocate(p, s);}}
+
+TYPED_TEST(TestAllocator7, test_10) {
+    typedef typename TestFixture::allocator_type allocator_type;
+    typedef typename TestFixture::value_type     value_type;
+    typedef typename TestFixture::size_type      size_type;
+    typedef typename TestFixture::pointer        pointer;
+
+          allocator_type x;
+    const size_type      s = 500;
+    const value_type     v = 42;
+    const pointer        b = x.allocate(s);
+    if (b != nullptr) {
+        pointer e = b + s;
+        pointer p = b;
+        try {
+            while (p != e) {
+                x.construct(p, v);
+                ++p;}}
+        catch (...) {
+            while (b != p) {
+                --p;
+                x.destroy(p);}
+            x.deallocate(b, s);
+            throw;}
+        ASSERT_EQ(s, std::count(b, e, v));
+        while (b != e) {
+            --e;
+            x.destroy(e);}
+        x.deallocate(b, s);}}
