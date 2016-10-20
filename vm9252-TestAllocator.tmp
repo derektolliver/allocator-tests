@@ -1,0 +1,165 @@
+==4061== Memcheck, a memory error detector
+==4061== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==4061== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+==4061== Command: ./TestAllocator
+==4061== 
+Running main() from gtest_main.cc
+[==========] Running 50 tests from 9 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllAllocators/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllAllocators/0.constuct_1
+[       OK ] TestAllAllocators/0.constuct_1 (13 ms)
+[ RUN      ] TestAllAllocators/0.construct_many
+[       OK ] TestAllAllocators/0.construct_many (5 ms)
+[----------] 2 tests from TestAllAllocators/0 (30 ms total)
+
+[----------] 2 tests from TestAllAllocators/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllAllocators/1.constuct_1
+[       OK ] TestAllAllocators/1.constuct_1 (5 ms)
+[ RUN      ] TestAllAllocators/1.construct_many
+[       OK ] TestAllAllocators/1.construct_many (4 ms)
+[----------] 2 tests from TestAllAllocators/1 (9 ms total)
+
+[----------] 2 tests from TestAllAllocators/2, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllAllocators/2.constuct_1
+[       OK ] TestAllAllocators/2.constuct_1 (8 ms)
+[ RUN      ] TestAllAllocators/2.construct_many
+[       OK ] TestAllAllocators/2.construct_many (3 ms)
+[----------] 2 tests from TestAllAllocators/2 (11 ms total)
+
+[----------] 2 tests from TestAllAllocators/3, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllAllocators/3.constuct_1
+[       OK ] TestAllAllocators/3.constuct_1 (8 ms)
+[ RUN      ] TestAllAllocators/3.construct_many
+[       OK ] TestAllAllocators/3.construct_many (4 ms)
+[----------] 2 tests from TestAllAllocators/3 (12 ms total)
+
+[----------] 10 tests from TestTypes/0, where TypeParam = char
+[ RUN      ] TestTypes/0.allocator_size
+[       OK ] TestTypes/0.allocator_size (41 ms)
+[ RUN      ] TestTypes/0.alloc_1
+[       OK ] TestTypes/0.alloc_1 (5 ms)
+[ RUN      ] TestTypes/0.alloc_2
+[       OK ] TestTypes/0.alloc_2 (7 ms)
+[ RUN      ] TestTypes/0.alloc_2_contiguous
+[       OK ] TestTypes/0.alloc_2_contiguous (3 ms)
+[ RUN      ] TestTypes/0.alloc_dealloc_alloc
+[       OK ] TestTypes/0.alloc_dealloc_alloc (4 ms)
+[ RUN      ] TestTypes/0.alloc_fail
+[       OK ] TestTypes/0.alloc_fail (3 ms)
+[ RUN      ] TestTypes/0.dealloc_coalesce
+[       OK ] TestTypes/0.dealloc_coalesce (11 ms)
+[ RUN      ] TestTypes/0.dealloc_coalesce_unordered
+[       OK ] TestTypes/0.dealloc_coalesce_unordered (5 ms)
+[ RUN      ] TestTypes/0.dealloc_null
+[       OK ] TestTypes/0.dealloc_null (5 ms)
+[ RUN      ] TestTypes/0.dealloc_freed
+[       OK ] TestTypes/0.dealloc_freed (3 ms)
+[----------] 10 tests from TestTypes/0 (87 ms total)
+
+[----------] 10 tests from TestTypes/1, where TypeParam = int
+[ RUN      ] TestTypes/1.allocator_size
+[       OK ] TestTypes/1.allocator_size (9 ms)
+[ RUN      ] TestTypes/1.alloc_1
+[       OK ] TestTypes/1.alloc_1 (5 ms)
+[ RUN      ] TestTypes/1.alloc_2
+[       OK ] TestTypes/1.alloc_2 (7 ms)
+[ RUN      ] TestTypes/1.alloc_2_contiguous
+[       OK ] TestTypes/1.alloc_2_contiguous (5 ms)
+[ RUN      ] TestTypes/1.alloc_dealloc_alloc
+[       OK ] TestTypes/1.alloc_dealloc_alloc (4 ms)
+[ RUN      ] TestTypes/1.alloc_fail
+[       OK ] TestTypes/1.alloc_fail (3 ms)
+[ RUN      ] TestTypes/1.dealloc_coalesce
+[       OK ] TestTypes/1.dealloc_coalesce (11 ms)
+[ RUN      ] TestTypes/1.dealloc_coalesce_unordered
+[       OK ] TestTypes/1.dealloc_coalesce_unordered (4 ms)
+[ RUN      ] TestTypes/1.dealloc_null
+[       OK ] TestTypes/1.dealloc_null (3 ms)
+[ RUN      ] TestTypes/1.dealloc_freed
+[       OK ] TestTypes/1.dealloc_freed (3 ms)
+[----------] 10 tests from TestTypes/1 (54 ms total)
+
+[----------] 10 tests from TestTypes/2, where TypeParam = double
+[ RUN      ] TestTypes/2.allocator_size
+[       OK ] TestTypes/2.allocator_size (10 ms)
+[ RUN      ] TestTypes/2.alloc_1
+[       OK ] TestTypes/2.alloc_1 (5 ms)
+[ RUN      ] TestTypes/2.alloc_2
+[       OK ] TestTypes/2.alloc_2 (7 ms)
+[ RUN      ] TestTypes/2.alloc_2_contiguous
+[       OK ] TestTypes/2.alloc_2_contiguous (5 ms)
+[ RUN      ] TestTypes/2.alloc_dealloc_alloc
+[       OK ] TestTypes/2.alloc_dealloc_alloc (3 ms)
+[ RUN      ] TestTypes/2.alloc_fail
+[       OK ] TestTypes/2.alloc_fail (3 ms)
+[ RUN      ] TestTypes/2.dealloc_coalesce
+[       OK ] TestTypes/2.dealloc_coalesce (11 ms)
+[ RUN      ] TestTypes/2.dealloc_coalesce_unordered
+[       OK ] TestTypes/2.dealloc_coalesce_unordered (5 ms)
+[ RUN      ] TestTypes/2.dealloc_null
+[       OK ] TestTypes/2.dealloc_null (3 ms)
+[ RUN      ] TestTypes/2.dealloc_freed
+[       OK ] TestTypes/2.dealloc_freed (2 ms)
+[----------] 10 tests from TestTypes/2 (54 ms total)
+
+[----------] 10 tests from TestTypes/3, where TypeParam = vec3
+[ RUN      ] TestTypes/3.allocator_size
+[       OK ] TestTypes/3.allocator_size (9 ms)
+[ RUN      ] TestTypes/3.alloc_1
+[       OK ] TestTypes/3.alloc_1 (5 ms)
+[ RUN      ] TestTypes/3.alloc_2
+[       OK ] TestTypes/3.alloc_2 (7 ms)
+[ RUN      ] TestTypes/3.alloc_2_contiguous
+[       OK ] TestTypes/3.alloc_2_contiguous (5 ms)
+[ RUN      ] TestTypes/3.alloc_dealloc_alloc
+[       OK ] TestTypes/3.alloc_dealloc_alloc (3 ms)
+[ RUN      ] TestTypes/3.alloc_fail
+[       OK ] TestTypes/3.alloc_fail (2 ms)
+[ RUN      ] TestTypes/3.dealloc_coalesce
+[       OK ] TestTypes/3.dealloc_coalesce (11 ms)
+[ RUN      ] TestTypes/3.dealloc_coalesce_unordered
+[       OK ] TestTypes/3.dealloc_coalesce_unordered (4 ms)
+[ RUN      ] TestTypes/3.dealloc_null
+[       OK ] TestTypes/3.dealloc_null (2 ms)
+[ RUN      ] TestTypes/3.dealloc_freed
+[       OK ] TestTypes/3.dealloc_freed (3 ms)
+[----------] 10 tests from TestTypes/3 (53 ms total)
+
+[----------] 2 tests from TestAllocatorIndex
+[ RUN      ] TestAllocatorIndex.const_index
+[       OK ] TestAllocatorIndex.const_index (2 ms)
+[ RUN      ] TestAllocatorIndex.index
+[       OK ] TestAllocatorIndex.index (2 ms)
+[----------] 2 tests from TestAllocatorIndex (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 50 tests from 9 test cases ran. (356 ms total)
+[  PASSED  ] 50 tests.
+==4061== 
+==4061== HEAP SUMMARY:
+==4061==     in use at exit: 72,704 bytes in 1 blocks
+==4061==   total heap usage: 1,076 allocs, 1,075 frees, 265,882 bytes allocated
+==4061== 
+==4061== LEAK SUMMARY:
+==4061==    definitely lost: 0 bytes in 0 blocks
+==4061==    indirectly lost: 0 bytes in 0 blocks
+==4061==      possibly lost: 0 bytes in 0 blocks
+==4061==    still reachable: 72,704 bytes in 1 blocks
+==4061==         suppressed: 0 bytes in 0 blocks
+==4061== Rerun with --leak-check=full to see details of leaked memory
+==4061== 
+==4061== For counts of detected and suppressed errors, rerun with: -v
+==4061== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'Allocator.h'
+Lines executed:98.61% of 72
+Branches executed:73.82% of 932
+Taken at least once:46.35% of 932
+Calls executed:52.02% of 767
+Creating 'Allocator.h.gcov'
+File 'TestAllocator.c++'
+Lines executed:100.00% of 115
+Branches executed:58.87% of 1556
+Taken at least once:30.46% of 1556
+Calls executed:43.86% of 1703
+Creating 'TestAllocator.c++.gcov'
