@@ -31,8 +31,8 @@ template <typename A> struct StudentTestAllocator0 : testing::Test {
   typedef typename A::pointer pointer;
 };
 
-typedef testing::Types<Allocator<char, 100>, Allocator<int, 100>,
-                       Allocator<double, 100>, Allocator<short, 100>>
+typedef testing::Types<my_allocator<char, 100>, my_allocator<int, 100>,
+                       my_allocator<double, 100>, my_allocator<short, 100>>
     student_types_0;
 
 TYPED_TEST_CASE(StudentTestAllocator0, student_types_0);
@@ -196,8 +196,8 @@ template <typename A> struct StudentTestAllocator1 : testing::Test {
   typedef typename A::pointer pointer;
 };
 
-typedef testing::Types<Allocator<char, 900>, Allocator<int, 1200>,
-                       Allocator<double, 1600>, Allocator<short, 1000>>
+typedef testing::Types<my_allocator<char, 900>, my_allocator<int, 1200>,
+                       my_allocator<double, 1600>, my_allocator<short, 1000>>
     student_types_1;
 
 TYPED_TEST_CASE(StudentTestAllocator1, student_types_1);
@@ -290,8 +290,8 @@ template <typename A> struct StudentStressTestAllocator1 : testing::Test {
   typedef typename A::pointer pointer;
 };
 
-typedef testing::Types<Allocator<char, 9000>, Allocator<int, 12000>,
-                       Allocator<double, 16000>, Allocator<short, 10000>>
+typedef testing::Types<my_allocator<char, 9000>, my_allocator<int, 12000>,
+                       my_allocator<double, 16000>, my_allocator<short, 10000>>
     student_types_2;
 
 TYPED_TEST_CASE(StudentStressTestAllocator1, student_types_2);
@@ -322,20 +322,20 @@ TYPED_TEST(StudentStressTestAllocator1, test_1) {
 
 // Professor Downing's Test + MyTests
 TEST(TestAllocator2, const_index) {
-  const Allocator<int, 100> x;
+  const my_allocator<int, 100> x;
   ASSERT_EQ(x[0], 92);
 
   // test bigger size
-  const Allocator<int, 1000> y;
+  const my_allocator<int, 1000> y;
   ASSERT_EQ(y[0], 992);
 }
 
 TEST(TestAllocator2, index) {
-  Allocator<int, 100> x;
+  my_allocator<int, 100> x;
   ASSERT_EQ(x[0], 92);
 
   // test bigger size
-  Allocator<int, 1000> y;
+  my_allocator<int, 1000> y;
   ASSERT_EQ(y[0], 992);
 }
 
@@ -356,7 +356,7 @@ template <typename A> struct TestAllocator0 : testing::Test {
 };
 
 typedef testing::Types<std::allocator<int>, std::allocator<double>,
-                       Allocator<int, 100>, Allocator<double, 100>>
+                       my_allocator<int, 100>, my_allocator<double, 100>>
     my_types_0;
 
 TYPED_TEST_CASE(TestAllocator0, my_types_0);
@@ -391,7 +391,7 @@ template <typename A> struct TestAllocator1 : testing::Test {
 };
 
 typedef testing::Types<std::allocator<int>, std::allocator<double>,
-                       Allocator<int, 100>, Allocator<double, 100>>
+                       my_allocator<int, 100>, my_allocator<double, 100>>
     my_types_1;
 
 TYPED_TEST_CASE(TestAllocator1, my_types_1);
@@ -464,7 +464,8 @@ template <typename A> struct TestAllocator3 : testing::Test {
   typedef typename A::pointer pointer;
 };
 
-typedef testing::Types<Allocator<int, 100>, Allocator<double, 100>> my_types_2;
+typedef testing::Types<my_allocator<int, 100>, my_allocator<double, 100>>
+    my_types_2;
 
 TYPED_TEST_CASE(TestAllocator3, my_types_2);
 
