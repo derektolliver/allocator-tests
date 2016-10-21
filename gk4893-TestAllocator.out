@@ -1,0 +1,59 @@
+==8862== Memcheck, a memory error detector
+==8862== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==8862== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==8862== Command: ./TestAllocator
+==8862== 
+Running main() from gtest_main.cc
+[==========] Running 12 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 12 tests from MyTestAllocator
+[ RUN      ] MyTestAllocator.constructor_1
+[       OK ] MyTestAllocator.constructor_1 (10 ms)
+[ RUN      ] MyTestAllocator.constructor_2
+[       OK ] MyTestAllocator.constructor_2 (4 ms)
+[ RUN      ] MyTestAllocator.constructor_3
+[       OK ] MyTestAllocator.constructor_3 (33 ms)
+[ RUN      ] MyTestAllocator.allocate_1
+[       OK ] MyTestAllocator.allocate_1 (7 ms)
+[ RUN      ] MyTestAllocator.allocate_2
+[       OK ] MyTestAllocator.allocate_2 (9 ms)
+[ RUN      ] MyTestAllocator.allocate_3
+[       OK ] MyTestAllocator.allocate_3 (2 ms)
+[ RUN      ] MyTestAllocator.deallocate_1
+[       OK ] MyTestAllocator.deallocate_1 (7 ms)
+[ RUN      ] MyTestAllocator.deallocate_2
+[       OK ] MyTestAllocator.deallocate_2 (7 ms)
+[ RUN      ] MyTestAllocator.deallocate_3
+[       OK ] MyTestAllocator.deallocate_3 (3 ms)
+[ RUN      ] MyTestAllocator.valid_1
+[       OK ] MyTestAllocator.valid_1 (3 ms)
+[ RUN      ] MyTestAllocator.valid_2
+[       OK ] MyTestAllocator.valid_2 (2 ms)
+[ RUN      ] MyTestAllocator.valid_3
+[       OK ] MyTestAllocator.valid_3 (3 ms)
+[----------] 12 tests from MyTestAllocator (97 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test case ran. (124 ms total)
+[  PASSED  ] 12 tests.
+==8862== 
+==8862== HEAP SUMMARY:
+==8862==     in use at exit: 0 bytes in 0 blocks
+==8862==   total heap usage: 390 allocs, 390 frees, 62,449 bytes allocated
+==8862== 
+==8862== All heap blocks were freed -- no leaks are possible
+==8862== 
+==8862== For counts of detected and suppressed errors, rerun with: -v
+==8862== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'Allocator.h'
+Lines executed:94.00% of 100
+Branches executed:71.74% of 92
+Taken at least once:52.17% of 92
+Calls executed:50.00% of 94
+Creating 'Allocator.h.gcov'
+File 'TestAllocator.c++'
+Lines executed:97.96% of 98
+Branches executed:54.24% of 542
+Taken at least once:27.86% of 542
+Calls executed:45.89% of 560
+Creating 'TestAllocator.c++.gcov'
