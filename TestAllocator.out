@@ -1,0 +1,117 @@
+==33== Memcheck, a memory error detector
+==33== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==33== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+==33== Command: ./TestAllocator
+==33== 
+Running main() from gtest_main.cc
+[==========] Running 32 tests from 7 test cases.
+[----------] Global test environment set-up.
+[----------] 5 tests from TestAllocator1/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllocator1/0.test_1
+[       OK ] TestAllocator1/0.test_1 (22 ms)
+[ RUN      ] TestAllocator1/0.test_10
+[       OK ] TestAllocator1/0.test_10 (8 ms)
+[ RUN      ] TestAllocator1/0.test_11
+[       OK ] TestAllocator1/0.test_11 (6 ms)
+[ RUN      ] TestAllocator1/0.test_100
+[       OK ] TestAllocator1/0.test_100 (6 ms)
+[ RUN      ] TestAllocator1/0.test_101
+[       OK ] TestAllocator1/0.test_101 (6 ms)
+[----------] 5 tests from TestAllocator1/0 (68 ms total)
+
+[----------] 5 tests from TestAllocator1/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllocator1/1.test_1
+[       OK ] TestAllocator1/1.test_1 (8 ms)
+[ RUN      ] TestAllocator1/1.test_10
+[       OK ] TestAllocator1/1.test_10 (6 ms)
+[ RUN      ] TestAllocator1/1.test_11
+[       OK ] TestAllocator1/1.test_11 (6 ms)
+[ RUN      ] TestAllocator1/1.test_100
+[       OK ] TestAllocator1/1.test_100 (6 ms)
+[ RUN      ] TestAllocator1/1.test_101
+[       OK ] TestAllocator1/1.test_101 (6 ms)
+[----------] 5 tests from TestAllocator1/1 (35 ms total)
+
+[----------] 5 tests from TestAllocator1/2, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator1/2.test_1
+[       OK ] TestAllocator1/2.test_1 (14 ms)
+[ RUN      ] TestAllocator1/2.test_10
+[       OK ] TestAllocator1/2.test_10 (5 ms)
+[ RUN      ] TestAllocator1/2.test_11
+[       OK ] TestAllocator1/2.test_11 (6 ms)
+[ RUN      ] TestAllocator1/2.test_100
+[       OK ] TestAllocator1/2.test_100 (2399 ms)
+[ RUN      ] TestAllocator1/2.test_101
+[       OK ] TestAllocator1/2.test_101 (3 ms)
+[----------] 5 tests from TestAllocator1/2 (2428 ms total)
+
+[----------] 5 tests from TestAllocator1/3, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator1/3.test_1
+[       OK ] TestAllocator1/3.test_1 (13 ms)
+[ RUN      ] TestAllocator1/3.test_10
+[       OK ] TestAllocator1/3.test_10 (5 ms)
+[ RUN      ] TestAllocator1/3.test_11
+[       OK ] TestAllocator1/3.test_11 (10 ms)
+[ RUN      ] TestAllocator1/3.test_100
+[       OK ] TestAllocator1/3.test_100 (941 ms)
+[ RUN      ] TestAllocator1/3.test_101
+[       OK ] TestAllocator1/3.test_101 (2 ms)
+[----------] 5 tests from TestAllocator1/3 (975 ms total)
+
+[----------] 2 tests from TestAllocator2
+[ RUN      ] TestAllocator2.const_index
+[       OK ] TestAllocator2.const_index (4 ms)
+[ RUN      ] TestAllocator2.index
+[       OK ] TestAllocator2.index (6 ms)
+[----------] 2 tests from TestAllocator2 (10 ms total)
+
+[----------] 5 tests from TestAllocator3/0, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator3/0.test_1
+[       OK ] TestAllocator3/0.test_1 (4 ms)
+[ RUN      ] TestAllocator3/0.test_10
+[       OK ] TestAllocator3/0.test_10 (4 ms)
+[ RUN      ] TestAllocator3/0.test_11
+[       OK ] TestAllocator3/0.test_11 (4 ms)
+[ RUN      ] TestAllocator3/0.test_100
+[       OK ] TestAllocator3/0.test_100 (5 ms)
+[ RUN      ] TestAllocator3/0.test_101
+[       OK ] TestAllocator3/0.test_101 (4 ms)
+[----------] 5 tests from TestAllocator3/0 (25 ms total)
+
+[----------] 5 tests from TestAllocator3/1, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator3/1.test_1
+[       OK ] TestAllocator3/1.test_1 (5 ms)
+[ RUN      ] TestAllocator3/1.test_10
+[       OK ] TestAllocator3/1.test_10 (5 ms)
+[ RUN      ] TestAllocator3/1.test_11
+[       OK ] TestAllocator3/1.test_11 (4 ms)
+[ RUN      ] TestAllocator3/1.test_100
+[       OK ] TestAllocator3/1.test_100 (5 ms)
+[ RUN      ] TestAllocator3/1.test_101
+[       OK ] TestAllocator3/1.test_101 (4 ms)
+[----------] 5 tests from TestAllocator3/1 (24 ms total)
+
+[----------] Global test environment tear-down
+[==========] 32 tests from 7 test cases ran. (3634 ms total)
+[  PASSED  ] 32 tests.
+==33== 
+==33== HEAP SUMMARY:
+==33==     in use at exit: 72,704 bytes in 1 blocks
+==33==   total heap usage: 1,058 allocs, 1,057 frees, 217,972 bytes allocated
+==33== 
+==33== LEAK SUMMARY:
+==33==    definitely lost: 0 bytes in 0 blocks
+==33==    indirectly lost: 0 bytes in 0 blocks
+==33==      possibly lost: 0 bytes in 0 blocks
+==33==    still reachable: 72,704 bytes in 1 blocks
+==33==         suppressed: 0 bytes in 0 blocks
+==33== Rerun with --leak-check=full to see details of leaked memory
+==33== 
+==33== For counts of detected and suppressed errors, rerun with: -v
+==33== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'TestAllocator.c++'
+Lines executed:79.90% of 204
+Branches executed:55.63% of 1280
+Taken at least once:29.06% of 1280
+Calls executed:43.78% of 1085
+Creating 'TestAllocator.c++.gcov'
