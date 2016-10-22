@@ -1,0 +1,116 @@
+==21944== Memcheck, a memory error detector
+==21944== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==21944== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==21944== Command: ./TestAllocator
+==21944==
+Running main() from gtest_main.cc
+[==========] Running 27 tests from 10 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllocator1/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllocator1/0.test_1
+[       OK ] TestAllocator1/0.test_1 (8 ms)
+[ RUN      ] TestAllocator1/0.test_10
+[       OK ] TestAllocator1/0.test_10 (3 ms)
+[----------] 2 tests from TestAllocator1/0 (17 ms total)
+
+[----------] 2 tests from TestAllocator1/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllocator1/1.test_1
+[       OK ] TestAllocator1/1.test_1 (4 ms)
+[ RUN      ] TestAllocator1/1.test_10
+[       OK ] TestAllocator1/1.test_10 (2 ms)
+[----------] 2 tests from TestAllocator1/1 (7 ms total)
+
+[----------] 2 tests from TestAllocator1/2, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator1/2.test_1
+[       OK ] TestAllocator1/2.test_1 (7 ms)
+[ RUN      ] TestAllocator1/2.test_10
+[       OK ] TestAllocator1/2.test_10 (2 ms)
+[----------] 2 tests from TestAllocator1/2 (9 ms total)
+
+[----------] 2 tests from TestAllocator1/3, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator1/3.test_1
+[       OK ] TestAllocator1/3.test_1 (7 ms)
+[ RUN      ] TestAllocator1/3.test_10
+[       OK ] TestAllocator1/3.test_10 (3 ms)
+[----------] 2 tests from TestAllocator1/3 (10 ms total)
+
+[----------] 6 tests from TestAllocator2
+[ RUN      ] TestAllocator2.const_index
+[       OK ] TestAllocator2.const_index (2 ms)
+[ RUN      ] TestAllocator2.index
+[       OK ] TestAllocator2.index (2 ms)
+[ RUN      ] TestAllocator2.const_index1
+[       OK ] TestAllocator2.const_index1 (3 ms)
+[ RUN      ] TestAllocator2.index1
+[       OK ] TestAllocator2.index1 (2 ms)
+[ RUN      ] TestAllocator2.const_index2
+[       OK ] TestAllocator2.const_index2 (3 ms)
+[ RUN      ] TestAllocator2.index2
+[       OK ] TestAllocator2.index2 (2 ms)
+[----------] 6 tests from TestAllocator2 (14 ms total)
+
+[----------] 2 tests from TestAllocator3/0, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator3/0.test_1
+[       OK ] TestAllocator3/0.test_1 (2 ms)
+[ RUN      ] TestAllocator3/0.test_10
+[       OK ] TestAllocator3/0.test_10 (3 ms)
+[----------] 2 tests from TestAllocator3/0 (5 ms total)
+
+[----------] 2 tests from TestAllocator3/1, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator3/1.test_1
+[       OK ] TestAllocator3/1.test_1 (3 ms)
+[ RUN      ] TestAllocator3/1.test_10
+[       OK ] TestAllocator3/1.test_10 (2 ms)
+[----------] 2 tests from TestAllocator3/1 (5 ms total)
+
+[----------] 3 tests from validity
+[ RUN      ] validity.index
+[       OK ] validity.index (2 ms)
+[ RUN      ] validity.index1
+[       OK ] validity.index1 (2 ms)
+[ RUN      ] validity.index2
+[       OK ] validity.index2 (2 ms)
+[----------] 3 tests from validity (6 ms total)
+
+[----------] 3 tests from allocate
+[ RUN      ] allocate.index
+[       OK ] allocate.index (2 ms)
+[ RUN      ] allocate.index1
+[       OK ] allocate.index1 (2 ms)
+[ RUN      ] allocate.index2
+[       OK ] allocate.index2 (2 ms)
+[----------] 3 tests from allocate (6 ms total)
+
+[----------] 3 tests from deallocate
+[ RUN      ] deallocate.index
+[       OK ] deallocate.index (6 ms)
+[ RUN      ] deallocate.index1
+[       OK ] deallocate.index1 (2 ms)
+[ RUN      ] deallocate.index2
+[       OK ] deallocate.index2 (3 ms)
+[----------] 3 tests from deallocate (11 ms total)
+
+[----------] Global test environment tear-down
+[==========] 27 tests from 10 test cases ran. (112 ms total)
+[  PASSED  ] 27 tests.
+==21944==
+==21944== HEAP SUMMARY:
+==21944==     in use at exit: 0 bytes in 0 blocks
+==21944==   total heap usage: 989 allocs, 989 frees, 130,556 bytes allocated
+==21944==
+==21944== All heap blocks were freed -- no leaks are possible
+==21944==
+==21944== For counts of detected and suppressed errors, rerun with: -v
+==21944== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'Allocator.h'
+Lines executed:71.13% of 97
+Branches executed:68.99% of 258
+Taken at least once:39.53% of 258
+Calls executed:27.18% of 195
+Creating 'Allocator.h.gcov'
+File 'TestAllocator.c++'
+Lines executed:90.77% of 130
+Branches executed:63.27% of 686
+Taken at least once:33.38% of 686
+Calls executed:54.37% of 721
+Creating 'TestAllocator.c++.gcov'
