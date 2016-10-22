@@ -1,0 +1,148 @@
+==103414== Memcheck, a memory error detector
+==103414== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==103414== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==103414== Command: ./TestAllocator
+==103414== 
+Running main() from gtest_main.cc
+[==========] Running 29 tests from 8 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllocator1/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllocator1/0.test_1
+[       OK ] TestAllocator1/0.test_1 (11 ms)
+[ RUN      ] TestAllocator1/0.test_10
+[       OK ] TestAllocator1/0.test_10 (5 ms)
+[----------] 2 tests from TestAllocator1/0 (24 ms total)
+
+[----------] 2 tests from TestAllocator1/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllocator1/1.test_1
+[       OK ] TestAllocator1/1.test_1 (6 ms)
+[ RUN      ] TestAllocator1/1.test_10
+[       OK ] TestAllocator1/1.test_10 (4 ms)
+[----------] 2 tests from TestAllocator1/1 (10 ms total)
+
+[----------] 2 tests from TestAllocator1/2, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator1/2.test_1
+[       OK ] TestAllocator1/2.test_1 (10 ms)
+[ RUN      ] TestAllocator1/2.test_10
+[       OK ] TestAllocator1/2.test_10 (4 ms)
+[----------] 2 tests from TestAllocator1/2 (14 ms total)
+
+[----------] 2 tests from TestAllocator1/3, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator1/3.test_1
+[       OK ] TestAllocator1/3.test_1 (10 ms)
+[ RUN      ] TestAllocator1/3.test_10
+[       OK ] TestAllocator1/3.test_10 (4 ms)
+[----------] 2 tests from TestAllocator1/3 (14 ms total)
+
+[----------] 8 tests from TestAllocator2
+[ RUN      ] TestAllocator2.const_index
+[       OK ] TestAllocator2.const_index (2 ms)
+[ RUN      ] TestAllocator2.index
+[       OK ] TestAllocator2.index (2 ms)
+[ RUN      ] TestAllocator2.constructor1
+[       OK ] TestAllocator2.constructor1 (2 ms)
+[ RUN      ] TestAllocator2.constructor2
+[       OK ] TestAllocator2.constructor2 (5 ms)
+[ RUN      ] TestAllocator2.constructor3
+[       OK ] TestAllocator2.constructor3 (39 ms)
+[ RUN      ] TestAllocator2.alloc1
+[       OK ] TestAllocator2.alloc1 (3 ms)
+[ RUN      ] TestAllocator2.alloc2
+[       OK ] TestAllocator2.alloc2 (6 ms)
+[ RUN      ] TestAllocator2.alloc3
+[       OK ] TestAllocator2.alloc3 (7 ms)
+[----------] 8 tests from TestAllocator2 (66 ms total)
+
+[----------] 3 tests from TestAllocator4
+[ RUN      ] TestAllocator4.valid1
+==103414== Conditional jump or move depends on uninitialised value(s)
+==103414==    at 0x40AFE4: my_allocator<int, 100ul>::valid() const (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x405AAC: TestAllocator4_valid1_Test::TestBody() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4439B2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4364EC: testing::Test::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x436583: testing::TestInfo::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x436684: testing::TestCase::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4368FC: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x436BDD: testing::UnitTest::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4052AF: main (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414== 
+[       OK ] TestAllocator4.valid1 (3 ms)
+[ RUN      ] TestAllocator4.valid2
+==103414== Conditional jump or move depends on uninitialised value(s)
+==103414==    at 0x40B2C4: my_allocator<double, 100ul>::valid() const (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x405E93: TestAllocator4_valid2_Test::TestBody() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4439B2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4364EC: testing::Test::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x436583: testing::TestInfo::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x436684: testing::TestCase::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4368FC: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x436BDD: testing::UnitTest::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4052AF: main (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414== 
+[       OK ] TestAllocator4.valid2 (3 ms)
+[ RUN      ] TestAllocator4.valid3
+==103414== Conditional jump or move depends on uninitialised value(s)
+==103414==    at 0x40AFE4: my_allocator<int, 100ul>::valid() const (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4062CD: TestAllocator4_valid3_Test::TestBody() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4439B2: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4364EC: testing::Test::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x436583: testing::TestInfo::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x436684: testing::TestCase::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4368FC: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x436BDD: testing::UnitTest::Run() (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414==    by 0x4052AF: main (in /v/filer4b/v38q001/kylemc/allocator-kdm3245/TestAllocator)
+==103414== 
+[       OK ] TestAllocator4.valid3 (3 ms)
+[----------] 3 tests from TestAllocator4 (9 ms total)
+
+[----------] 5 tests from TestAllocator3/0, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator3/0.test_1
+[       OK ] TestAllocator3/0.test_1 (4 ms)
+[ RUN      ] TestAllocator3/0.test_10
+[       OK ] TestAllocator3/0.test_10 (3 ms)
+[ RUN      ] TestAllocator3/0.dealloc1
+[       OK ] TestAllocator3/0.dealloc1 (8 ms)
+[ RUN      ] TestAllocator3/0.dealloc2
+[       OK ] TestAllocator3/0.dealloc2 (5 ms)
+[ RUN      ] TestAllocator3/0.dealloc3
+[       OK ] TestAllocator3/0.dealloc3 (6 ms)
+[----------] 5 tests from TestAllocator3/0 (26 ms total)
+
+[----------] 5 tests from TestAllocator3/1, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator3/1.test_1
+[       OK ] TestAllocator3/1.test_1 (3 ms)
+[ RUN      ] TestAllocator3/1.test_10
+[       OK ] TestAllocator3/1.test_10 (4 ms)
+[ RUN      ] TestAllocator3/1.dealloc1
+[       OK ] TestAllocator3/1.dealloc1 (6 ms)
+[ RUN      ] TestAllocator3/1.dealloc2
+[       OK ] TestAllocator3/1.dealloc2 (5 ms)
+[ RUN      ] TestAllocator3/1.dealloc3
+[       OK ] TestAllocator3/1.dealloc3 (6 ms)
+[----------] 5 tests from TestAllocator3/1 (24 ms total)
+
+[----------] Global test environment tear-down
+[==========] 29 tests from 8 test cases ran. (215 ms total)
+[  PASSED  ] 29 tests.
+==103414== 
+==103414== HEAP SUMMARY:
+==103414==     in use at exit: 0 bytes in 0 blocks
+==103414==   total heap usage: 1,049 allocs, 1,049 frees, 135,603 bytes allocated
+==103414== 
+==103414== All heap blocks were freed -- no leaks are possible
+==103414== 
+==103414== For counts of detected and suppressed errors, rerun with: -v
+==103414== Use --track-origins=yes to see where uninitialised values come from
+==103414== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+File 'Allocator.h'
+Lines executed:95.52% of 67
+Branches executed:84.81% of 158
+Taken at least once:53.80% of 158
+Calls executed:56.97% of 165
+Creating 'Allocator.h.gcov'
+File 'TestAllocator.c++'
+Lines executed:78.20% of 211
+Branches executed:57.37% of 1004
+Taken at least once:31.47% of 1004
+Calls executed:44.51% of 1011
+Creating 'TestAllocator.c++.gcov'
