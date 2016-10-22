@@ -1,0 +1,78 @@
+Running main() from gtest_main.cc
+[==========] Running 16 tests from 8 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllocator1/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllocator1/0.test_1
+[       OK ] TestAllocator1/0.test_1 (0 ms)
+[ RUN      ] TestAllocator1/0.test_10
+[       OK ] TestAllocator1/0.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/0 (0 ms total)
+
+[----------] 2 tests from TestAllocator1/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllocator1/1.test_1
+[       OK ] TestAllocator1/1.test_1 (0 ms)
+[ RUN      ] TestAllocator1/1.test_10
+[       OK ] TestAllocator1/1.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/1 (0 ms total)
+
+[----------] 2 tests from TestAllocator1/2, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator1/2.test_1
+[       OK ] TestAllocator1/2.test_1 (0 ms)
+[ RUN      ] TestAllocator1/2.test_10
+[       OK ] TestAllocator1/2.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/2 (0 ms total)
+
+[----------] 2 tests from TestAllocator1/3, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator1/3.test_1
+[       OK ] TestAllocator1/3.test_1 (0 ms)
+[ RUN      ] TestAllocator1/3.test_10
+[       OK ] TestAllocator1/3.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/3 (0 ms total)
+
+[----------] 2 tests from TestAllocator2
+[ RUN      ] TestAllocator2.const_index
+[       OK ] TestAllocator2.const_index (0 ms)
+[ RUN      ] TestAllocator2.index
+[       OK ] TestAllocator2.index (0 ms)
+[----------] 2 tests from TestAllocator2 (0 ms total)
+
+[----------] 2 tests from TestAllocator2a
+[ RUN      ] TestAllocator2a.const_index
+[       OK ] TestAllocator2a.const_index (0 ms)
+[ RUN      ] TestAllocator2a.index
+[       OK ] TestAllocator2a.index (0 ms)
+[----------] 2 tests from TestAllocator2a (0 ms total)
+
+[----------] 2 tests from TestAllocator3/0, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator3/0.test_1
+[       OK ] TestAllocator3/0.test_1 (0 ms)
+[ RUN      ] TestAllocator3/0.test_10
+[       OK ] TestAllocator3/0.test_10 (0 ms)
+[----------] 2 tests from TestAllocator3/0 (0 ms total)
+
+[----------] 2 tests from TestAllocator3/1, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator3/1.test_1
+[       OK ] TestAllocator3/1.test_1 (0 ms)
+[ RUN      ] TestAllocator3/1.test_10
+[       OK ] TestAllocator3/1.test_10 (0 ms)
+[----------] 2 tests from TestAllocator3/1 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 16 tests from 8 test cases ran. (1 ms total)
+[  PASSED  ] 16 tests.
+
+==10470== HEAP SUMMARY:
+==10470==     in use at exit: 0 bytes in 0 blocks
+==10470==   total heap usage: 764 allocs, 764 frees, 106,799 bytes allocated
+==10470== 
+==10470== All heap blocks were freed -- no leaks are possible
+==10470== 
+==10470== For counts of detected and suppressed errors, rerun with: -v
+==10470== Use --track-origins=yes to see where uninitialised values come from
+==10470== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+File 'TestAllocator.c++'
+Lines executed:85.19% of 81
+Branches executed:66.07% of 448
+Taken at least once:35.71% of 448
+Calls executed:52.47% of 425
+Creating 'TestAllocator.c++.gcov'
