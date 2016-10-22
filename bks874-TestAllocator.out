@@ -1,0 +1,93 @@
+Running main() from gtest_main.cc
+[==========] Running 33 tests from 7 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllocator1/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllocator1/0.test_1
+[       OK ] TestAllocator1/0.test_1 (0 ms)
+[ RUN      ] TestAllocator1/0.test_10
+[       OK ] TestAllocator1/0.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/0 (0 ms total)
+
+[----------] 2 tests from TestAllocator1/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllocator1/1.test_1
+[       OK ] TestAllocator1/1.test_1 (0 ms)
+[ RUN      ] TestAllocator1/1.test_10
+[       OK ] TestAllocator1/1.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/1 (0 ms total)
+
+[----------] 2 tests from TestAllocator1/2, where TypeParam = Allocator<int, 100ul>
+[ RUN      ] TestAllocator1/2.test_1
+[       OK ] TestAllocator1/2.test_1 (0 ms)
+[ RUN      ] TestAllocator1/2.test_10
+[       OK ] TestAllocator1/2.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/2 (0 ms total)
+
+[----------] 2 tests from TestAllocator1/3, where TypeParam = Allocator<double, 100ul>
+[ RUN      ] TestAllocator1/3.test_1
+[       OK ] TestAllocator1/3.test_1 (0 ms)
+[ RUN      ] TestAllocator1/3.test_10
+[       OK ] TestAllocator1/3.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/3 (0 ms total)
+
+[----------] 21 tests from TestAllocator2
+[ RUN      ] TestAllocator2.const_index
+[       OK ] TestAllocator2.const_index (0 ms)
+[ RUN      ] TestAllocator2.index
+[       OK ] TestAllocator2.index (0 ms)
+[ RUN      ] TestAllocator2.valid_1
+[       OK ] TestAllocator2.valid_1 (0 ms)
+[ RUN      ] TestAllocator2.valid_2
+[       OK ] TestAllocator2.valid_2 (0 ms)
+[ RUN      ] TestAllocator2.valid_3
+[       OK ] TestAllocator2.valid_3 (0 ms)
+[ RUN      ] TestAllocator2.valid_4
+[       OK ] TestAllocator2.valid_4 (0 ms)
+[ RUN      ] TestAllocator2.write_sentinel_to_arr_1
+[       OK ] TestAllocator2.write_sentinel_to_arr_1 (0 ms)
+[ RUN      ] TestAllocator2.write_sentinel_to_arr_2
+[       OK ] TestAllocator2.write_sentinel_to_arr_2 (0 ms)
+[ RUN      ] TestAllocator2.write_sentinel_to_arr_3
+[       OK ] TestAllocator2.write_sentinel_to_arr_3 (0 ms)
+[ RUN      ] TestAllocator2.constructor_1
+[       OK ] TestAllocator2.constructor_1 (0 ms)
+[ RUN      ] TestAllocator2.constructor_2
+[       OK ] TestAllocator2.constructor_2 (0 ms)
+[ RUN      ] TestAllocator2.constructor_3
+[       OK ] TestAllocator2.constructor_3 (0 ms)
+[ RUN      ] TestAllocator2.allocate_1
+[       OK ] TestAllocator2.allocate_1 (0 ms)
+[ RUN      ] TestAllocator2.allocate_2
+[       OK ] TestAllocator2.allocate_2 (0 ms)
+[ RUN      ] TestAllocator2.allocate_3
+[       OK ] TestAllocator2.allocate_3 (0 ms)
+[ RUN      ] TestAllocator2.deallocate_1
+[       OK ] TestAllocator2.deallocate_1 (0 ms)
+[ RUN      ] TestAllocator2.deallocate_2
+[       OK ] TestAllocator2.deallocate_2 (0 ms)
+[ RUN      ] TestAllocator2.deallocate_3
+[       OK ] TestAllocator2.deallocate_3 (0 ms)
+[ RUN      ] TestAllocator2.pointer_valid_1
+[       OK ] TestAllocator2.pointer_valid_1 (0 ms)
+[ RUN      ] TestAllocator2.pointer_valid_2
+[       OK ] TestAllocator2.pointer_valid_2 (0 ms)
+[ RUN      ] TestAllocator2.pointer_valid_3
+[       OK ] TestAllocator2.pointer_valid_3 (0 ms)
+[----------] 21 tests from TestAllocator2 (1 ms total)
+
+[----------] 2 tests from TestAllocator3/0, where TypeParam = Allocator<int, 100ul>
+[ RUN      ] TestAllocator3/0.test_1
+[       OK ] TestAllocator3/0.test_1 (0 ms)
+[ RUN      ] TestAllocator3/0.test_10
+[       OK ] TestAllocator3/0.test_10 (0 ms)
+[----------] 2 tests from TestAllocator3/0 (0 ms total)
+
+[----------] 2 tests from TestAllocator3/1, where TypeParam = Allocator<double, 100ul>
+[ RUN      ] TestAllocator3/1.test_1
+[       OK ] TestAllocator3/1.test_1 (0 ms)
+[ RUN      ] TestAllocator3/1.test_10
+[       OK ] TestAllocator3/1.test_10 (0 ms)
+[----------] 2 tests from TestAllocator3/1 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 33 tests from 7 test cases ran. (1 ms total)
+[  PASSED  ] 33 tests.
