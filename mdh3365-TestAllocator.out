@@ -1,0 +1,183 @@
+==25627== Memcheck, a memory error detector
+==25627== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==25627== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==25627== Command: ./TestAllocator
+==25627== 
+Running main() from gtest_main.cc
+[==========] Running 59 tests from 13 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllocator1/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllocator1/0.test_1
+[       OK ] TestAllocator1/0.test_1 (10 ms)
+[ RUN      ] TestAllocator1/0.test_10
+[       OK ] TestAllocator1/0.test_10 (3 ms)
+[----------] 2 tests from TestAllocator1/0 (21 ms total)
+
+[----------] 2 tests from TestAllocator1/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllocator1/1.test_1
+[       OK ] TestAllocator1/1.test_1 (5 ms)
+[ RUN      ] TestAllocator1/1.test_10
+[       OK ] TestAllocator1/1.test_10 (3 ms)
+[----------] 2 tests from TestAllocator1/1 (8 ms total)
+
+[----------] 2 tests from TestAllocator1/2, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator1/2.test_1
+[       OK ] TestAllocator1/2.test_1 (18 ms)
+[ RUN      ] TestAllocator1/2.test_10
+[       OK ] TestAllocator1/2.test_10 (3 ms)
+[----------] 2 tests from TestAllocator1/2 (21 ms total)
+
+[----------] 2 tests from TestAllocator1/3, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator1/3.test_1
+[       OK ] TestAllocator1/3.test_1 (17 ms)
+[ RUN      ] TestAllocator1/3.test_10
+[       OK ] TestAllocator1/3.test_10 (4 ms)
+[----------] 2 tests from TestAllocator1/3 (21 ms total)
+
+[----------] 2 tests from TestAllocator2
+[ RUN      ] TestAllocator2.const_index
+[       OK ] TestAllocator2.const_index (1 ms)
+[ RUN      ] TestAllocator2.index
+[       OK ] TestAllocator2.index (1 ms)
+[----------] 2 tests from TestAllocator2 (3 ms total)
+
+[----------] 2 tests from TestAllocator3/0, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator3/0.test_1
+[       OK ] TestAllocator3/0.test_1 (2 ms)
+[ RUN      ] TestAllocator3/0.test_10
+[       OK ] TestAllocator3/0.test_10 (2 ms)
+[----------] 2 tests from TestAllocator3/0 (5 ms total)
+
+[----------] 2 tests from TestAllocator3/1, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator3/1.test_1
+[       OK ] TestAllocator3/1.test_1 (3 ms)
+[ RUN      ] TestAllocator3/1.test_10
+[       OK ] TestAllocator3/1.test_10 (2 ms)
+[----------] 2 tests from TestAllocator3/1 (6 ms total)
+
+[----------] 14 tests from TestMyAllocatorAllocate
+[ RUN      ] TestMyAllocatorAllocate.test_basic
+[       OK ] TestMyAllocatorAllocate.test_basic (11 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_two
+[       OK ] TestMyAllocatorAllocate.test_two (4 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_three
+[       OK ] TestMyAllocatorAllocate.test_three (5 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_reallocate
+[       OK ] TestMyAllocatorAllocate.test_reallocate (12 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_reallocate_twice
+[       OK ] TestMyAllocatorAllocate.test_reallocate_twice (6 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_reallocate_two
+[       OK ] TestMyAllocatorAllocate.test_reallocate_two (14 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_reallocate_three
+[       OK ] TestMyAllocatorAllocate.test_reallocate_three (17 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_reallocate_three_unordered
+[       OK ] TestMyAllocatorAllocate.test_reallocate_three_unordered (34 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_max_combine
+[       OK ] TestMyAllocatorAllocate.test_max_combine (9 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_max
+[       OK ] TestMyAllocatorAllocate.test_max (10 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_too_big
+[       OK ] TestMyAllocatorAllocate.test_too_big (35 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_too_big_sandwhich
+[       OK ] TestMyAllocatorAllocate.test_too_big_sandwhich (3 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_small_double_allocate
+[       OK ] TestMyAllocatorAllocate.test_small_double_allocate (10 ms)
+[ RUN      ] TestMyAllocatorAllocate.test_big_double_allocate
+[       OK ] TestMyAllocatorAllocate.test_big_double_allocate (13 ms)
+[----------] 14 tests from TestMyAllocatorAllocate (184 ms total)
+
+[----------] 1 test from TestMyAllocatorBlock
+[ RUN      ] TestMyAllocatorBlock.test_equality
+[       OK ] TestMyAllocatorBlock.test_equality (2 ms)
+[----------] 1 test from TestMyAllocatorBlock (2 ms total)
+
+[----------] 1 test from TestMyAllocatorBlockIterator
+[ RUN      ] TestMyAllocatorBlockIterator.test_general
+[       OK ] TestMyAllocatorBlockIterator.test_general (7 ms)
+[----------] 1 test from TestMyAllocatorBlockIterator (8 ms total)
+
+[----------] 12 tests from TestMyAllocatorDeallocate
+[ RUN      ] TestMyAllocatorDeallocate.test_initial
+[       OK ] TestMyAllocatorDeallocate.test_initial (4 ms)
+[ RUN      ] TestMyAllocatorDeallocate.test_upper_bound
+[       OK ] TestMyAllocatorDeallocate.test_upper_bound (4 ms)
+[ RUN      ] TestMyAllocatorDeallocate.test_lower_bound
+[       OK ] TestMyAllocatorDeallocate.test_lower_bound (4 ms)
+[ RUN      ] TestMyAllocatorDeallocate.test_sandwhich_bound
+[       OK ] TestMyAllocatorDeallocate.test_sandwhich_bound (4 ms)
+[ RUN      ] TestMyAllocatorDeallocate.test_upper_coalesce
+[       OK ] TestMyAllocatorDeallocate.test_upper_coalesce (5 ms)
+[ RUN      ] TestMyAllocatorDeallocate.test_lower_coalesce
+[       OK ] TestMyAllocatorDeallocate.test_lower_coalesce (4 ms)
+[ RUN      ] TestMyAllocatorDeallocate.test_sandwhich_coalesce
+[       OK ] TestMyAllocatorDeallocate.test_sandwhich_coalesce (5 ms)
+[ RUN      ] TestMyAllocatorDeallocate.test_multi_sandwhich_coalesce
+[       OK ] TestMyAllocatorDeallocate.test_multi_sandwhich_coalesce (5 ms)
+[ RUN      ] TestMyAllocatorDeallocate.test_multi_sandwhich_coalesce_2
+[       OK ] TestMyAllocatorDeallocate.test_multi_sandwhich_coalesce_2 (5 ms)
+[ RUN      ] TestMyAllocatorDeallocate.test_multi_sandwhich_coalesce_cascading
+[       OK ] TestMyAllocatorDeallocate.test_multi_sandwhich_coalesce_cascading (8 ms)
+[ RUN      ] TestMyAllocatorDeallocate.test_small_double_deallocate
+[       OK ] TestMyAllocatorDeallocate.test_small_double_deallocate (6 ms)
+[ RUN      ] TestMyAllocatorDeallocate.test_big_double_deallocate
+[       OK ] TestMyAllocatorDeallocate.test_big_double_deallocate (10 ms)
+[----------] 12 tests from TestMyAllocatorDeallocate (65 ms total)
+
+[----------] 11 tests from TestMyAllocatorValid
+[ RUN      ] TestMyAllocatorValid.test_empty
+[       OK ] TestMyAllocatorValid.test_empty (2 ms)
+[ RUN      ] TestMyAllocatorValid.test_one
+[       OK ] TestMyAllocatorValid.test_one (2 ms)
+[ RUN      ] TestMyAllocatorValid.test_two
+[       OK ] TestMyAllocatorValid.test_two (2 ms)
+[ RUN      ] TestMyAllocatorValid.test_three
+[       OK ] TestMyAllocatorValid.test_three (2 ms)
+[ RUN      ] TestMyAllocatorValid.test_empty_fail
+[       OK ] TestMyAllocatorValid.test_empty_fail (2 ms)
+[ RUN      ] TestMyAllocatorValid.test_one_fail
+[       OK ] TestMyAllocatorValid.test_one_fail (2 ms)
+[ RUN      ] TestMyAllocatorValid.test_two_fail
+[       OK ] TestMyAllocatorValid.test_two_fail (2 ms)
+[ RUN      ] TestMyAllocatorValid.test_three_fail
+[       OK ] TestMyAllocatorValid.test_three_fail (3 ms)
+[ RUN      ] TestMyAllocatorValid.test_smaller_block_fail
+[       OK ] TestMyAllocatorValid.test_smaller_block_fail (2 ms)
+[ RUN      ] TestMyAllocatorValid.test_not_reachable_fail
+[       OK ] TestMyAllocatorValid.test_not_reachable_fail (2 ms)
+[ RUN      ] TestMyAllocatorValid.test_too_big_fail
+[       OK ] TestMyAllocatorValid.test_too_big_fail (1 ms)
+[----------] 11 tests from TestMyAllocatorValid (24 ms total)
+
+[----------] 6 tests from TestMyAllocatorConstruct
+[ RUN      ] TestMyAllocatorConstruct.test_small_int
+[       OK ] TestMyAllocatorConstruct.test_small_int (5 ms)
+[ RUN      ] TestMyAllocatorConstruct.test_big_int
+[       OK ] TestMyAllocatorConstruct.test_big_int (6 ms)
+[ RUN      ] TestMyAllocatorConstruct.test_small_double
+[       OK ] TestMyAllocatorConstruct.test_small_double (3 ms)
+[ RUN      ] TestMyAllocatorConstruct.test_big_double
+[       OK ] TestMyAllocatorConstruct.test_big_double (3 ms)
+[ RUN      ] TestMyAllocatorConstruct.test_small_float
+[       OK ] TestMyAllocatorConstruct.test_small_float (5 ms)
+[ RUN      ] TestMyAllocatorConstruct.test_big_float
+[       OK ] TestMyAllocatorConstruct.test_big_float (6 ms)
+[----------] 6 tests from TestMyAllocatorConstruct (28 ms total)
+
+[----------] Global test environment tear-down
+[==========] 59 tests from 13 test cases ran. (424 ms total)
+[  PASSED  ] 59 tests.
+==25627== 
+==25627== HEAP SUMMARY:
+==25627==     in use at exit: 0 bytes in 0 blocks
+==25627==   total heap usage: 1,553 allocs, 1,553 frees, 195,267 bytes allocated
+==25627== 
+==25627== All heap blocks were freed -- no leaks are possible
+==25627== 
+==25627== For counts of detected and suppressed errors, rerun with: -v
+==25627== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'TestAllocator.c++'
+Lines executed:97.88% of 565
+Branches executed:52.90% of 3728
+Taken at least once:26.77% of 3728
+Calls executed:42.78% of 3719
+Creating 'TestAllocator.c++.gcov'
