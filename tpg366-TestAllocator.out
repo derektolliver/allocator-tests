@@ -1,0 +1,99 @@
+==3232== Memcheck, a memory error detector
+==3232== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==3232== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+==3232== Command: ./TestAllocator
+==3232== 
+Running main() from gtest_main.cc
+[==========] Running 20 tests from 7 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllocator1/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllocator1/0.test_1
+[       OK ] TestAllocator1/0.test_1 (15 ms)
+[ RUN      ] TestAllocator1/0.test_10
+[       OK ] TestAllocator1/0.test_10 (6 ms)
+[----------] 2 tests from TestAllocator1/0 (38 ms total)
+
+[----------] 2 tests from TestAllocator1/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllocator1/1.test_1
+[       OK ] TestAllocator1/1.test_1 (6 ms)
+[ RUN      ] TestAllocator1/1.test_10
+[       OK ] TestAllocator1/1.test_10 (5 ms)
+[----------] 2 tests from TestAllocator1/1 (14 ms total)
+
+[----------] 2 tests from TestAllocator1/2, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator1/2.test_1
+[       OK ] TestAllocator1/2.test_1 (10 ms)
+[ RUN      ] TestAllocator1/2.test_10
+[       OK ] TestAllocator1/2.test_10 (3 ms)
+[----------] 2 tests from TestAllocator1/2 (16 ms total)
+
+[----------] 2 tests from TestAllocator1/3, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator1/3.test_1
+[       OK ] TestAllocator1/3.test_1 (10 ms)
+[ RUN      ] TestAllocator1/3.test_10
+[       OK ] TestAllocator1/3.test_10 (4 ms)
+[----------] 2 tests from TestAllocator1/3 (17 ms total)
+
+[----------] 4 tests from TestAllocator2
+[ RUN      ] TestAllocator2.const_index
+[       OK ] TestAllocator2.const_index (2 ms)
+[ RUN      ] TestAllocator2.index
+[       OK ] TestAllocator2.index (2 ms)
+[ RUN      ] TestAllocator2.deallocate_index
+[       OK ] TestAllocator2.deallocate_index (5 ms)
+[ RUN      ] TestAllocator2.deallocate_index_2
+[       OK ] TestAllocator2.deallocate_index_2 (3 ms)
+[----------] 4 tests from TestAllocator2 (17 ms total)
+
+[----------] 4 tests from TestAllocator3/0, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator3/0.test_1
+[       OK ] TestAllocator3/0.test_1 (4 ms)
+[ RUN      ] TestAllocator3/0.test_10
+[       OK ] TestAllocator3/0.test_10 (4 ms)
+[ RUN      ] TestAllocator3/0.test_bad_alloc
+[       OK ] TestAllocator3/0.test_bad_alloc (41 ms)
+[ RUN      ] TestAllocator3/0.test_invalid_arg
+[       OK ] TestAllocator3/0.test_invalid_arg (6 ms)
+[----------] 4 tests from TestAllocator3/0 (61 ms total)
+
+[----------] 4 tests from TestAllocator3/1, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator3/1.test_1
+[       OK ] TestAllocator3/1.test_1 (4 ms)
+[ RUN      ] TestAllocator3/1.test_10
+[       OK ] TestAllocator3/1.test_10 (4 ms)
+[ RUN      ] TestAllocator3/1.test_bad_alloc
+[       OK ] TestAllocator3/1.test_bad_alloc (5 ms)
+[ RUN      ] TestAllocator3/1.test_invalid_arg
+[       OK ] TestAllocator3/1.test_invalid_arg (4 ms)
+[----------] 4 tests from TestAllocator3/1 (20 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 7 test cases ran. (245 ms total)
+[  PASSED  ] 20 tests.
+==3232== 
+==3232== HEAP SUMMARY:
+==3232==     in use at exit: 72,704 bytes in 1 blocks
+==3232==   total heap usage: 715 allocs, 714 frees, 183,200 bytes allocated
+==3232== 
+==3232== LEAK SUMMARY:
+==3232==    definitely lost: 0 bytes in 0 blocks
+==3232==    indirectly lost: 0 bytes in 0 blocks
+==3232==      possibly lost: 0 bytes in 0 blocks
+==3232==    still reachable: 72,704 bytes in 1 blocks
+==3232==         suppressed: 0 bytes in 0 blocks
+==3232== Rerun with --leak-check=full to see details of leaked memory
+==3232== 
+==3232== For counts of detected and suppressed errors, rerun with: -v
+==3232== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'Allocator.h'
+Lines executed:92.41% of 79
+Branches executed:96.15% of 104
+Taken at least once:59.62% of 104
+Calls executed:62.82% of 78
+Creating 'Allocator.h.gcov'
+File 'TestAllocator.c++'
+Lines executed:87.76% of 98
+Branches executed:68.03% of 588
+Taken at least once:36.05% of 588
+Calls executed:53.79% of 541
+Creating 'TestAllocator.c++.gcov'
