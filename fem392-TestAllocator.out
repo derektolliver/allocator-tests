@@ -1,0 +1,106 @@
+Running main() from gtest_main.cc
+[==========] Running 28 tests from 10 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllocator1/0, where TypeParam = Allocator<char, 100ul>
+[ RUN      ] TestAllocator1/0.valid_arguments_test
+[       OK ] TestAllocator1/0.valid_arguments_test (0 ms)
+[ RUN      ] TestAllocator1/0.allocate_exception_test
+[       OK ] TestAllocator1/0.allocate_exception_test (0 ms)
+[----------] 2 tests from TestAllocator1/0 (0 ms total)
+
+[----------] 2 tests from TestAllocator1/1, where TypeParam = Allocator<int, 100ul>
+[ RUN      ] TestAllocator1/1.valid_arguments_test
+[       OK ] TestAllocator1/1.valid_arguments_test (0 ms)
+[ RUN      ] TestAllocator1/1.allocate_exception_test
+[       OK ] TestAllocator1/1.allocate_exception_test (0 ms)
+[----------] 2 tests from TestAllocator1/1 (0 ms total)
+
+[----------] 2 tests from TestAllocator1/2, where TypeParam = Allocator<double, 100ul>
+[ RUN      ] TestAllocator1/2.valid_arguments_test
+[       OK ] TestAllocator1/2.valid_arguments_test (0 ms)
+[ RUN      ] TestAllocator1/2.allocate_exception_test
+[       OK ] TestAllocator1/2.allocate_exception_test (0 ms)
+[----------] 2 tests from TestAllocator1/2 (0 ms total)
+
+[----------] 1 test from TestAllocatorNT/0, where TypeParam = Allocator<char, 27ul>
+[ RUN      ] TestAllocatorNT/0.bad_constructor_test
+[       OK ] TestAllocatorNT/0.bad_constructor_test (0 ms)
+[----------] 1 test from TestAllocatorNT/0 (0 ms total)
+
+[----------] 3 tests from TestAllocator2/0, where TypeParam = Allocator<char, 1000ul>
+[ RUN      ] TestAllocator2/0.valid_arguments_test
+[       OK ] TestAllocator2/0.valid_arguments_test (0 ms)
+[ RUN      ] TestAllocator2/0.multiple_allocate_test0
+[       OK ] TestAllocator2/0.multiple_allocate_test0 (0 ms)
+[ RUN      ] TestAllocator2/0.multiple_allocate_test1
+[       OK ] TestAllocator2/0.multiple_allocate_test1 (0 ms)
+[----------] 3 tests from TestAllocator2/0 (0 ms total)
+
+[----------] 3 tests from TestAllocator2/1, where TypeParam = Allocator<int, 1000ul>
+[ RUN      ] TestAllocator2/1.valid_arguments_test
+[       OK ] TestAllocator2/1.valid_arguments_test (1 ms)
+[ RUN      ] TestAllocator2/1.multiple_allocate_test0
+[       OK ] TestAllocator2/1.multiple_allocate_test0 (0 ms)
+[ RUN      ] TestAllocator2/1.multiple_allocate_test1
+[       OK ] TestAllocator2/1.multiple_allocate_test1 (0 ms)
+[----------] 3 tests from TestAllocator2/1 (1 ms total)
+
+[----------] 3 tests from TestAllocator2/2, where TypeParam = Allocator<double, 1000ul>
+[ RUN      ] TestAllocator2/2.valid_arguments_test
+[       OK ] TestAllocator2/2.valid_arguments_test (0 ms)
+[ RUN      ] TestAllocator2/2.multiple_allocate_test0
+[       OK ] TestAllocator2/2.multiple_allocate_test0 (0 ms)
+[ RUN      ] TestAllocator2/2.multiple_allocate_test1
+[       OK ] TestAllocator2/2.multiple_allocate_test1 (0 ms)
+[----------] 3 tests from TestAllocator2/2 (0 ms total)
+
+[----------] 4 tests from TestAllocator3/0, where TypeParam = Allocator<char, 200ul>
+[ RUN      ] TestAllocator3/0.left_coalesce_test
+[       OK ] TestAllocator3/0.left_coalesce_test (0 ms)
+[ RUN      ] TestAllocator3/0.right_coalesce_test
+[       OK ] TestAllocator3/0.right_coalesce_test (0 ms)
+[ RUN      ] TestAllocator3/0.dual_coalesce_test
+[       OK ] TestAllocator3/0.dual_coalesce_test (0 ms)
+[ RUN      ] TestAllocator3/0.downing_test_10
+[       OK ] TestAllocator3/0.downing_test_10 (0 ms)
+[----------] 4 tests from TestAllocator3/0 (0 ms total)
+
+[----------] 4 tests from TestAllocator3/1, where TypeParam = Allocator<int, 200ul>
+[ RUN      ] TestAllocator3/1.left_coalesce_test
+[       OK ] TestAllocator3/1.left_coalesce_test (0 ms)
+[ RUN      ] TestAllocator3/1.right_coalesce_test
+[       OK ] TestAllocator3/1.right_coalesce_test (0 ms)
+[ RUN      ] TestAllocator3/1.dual_coalesce_test
+[       OK ] TestAllocator3/1.dual_coalesce_test (0 ms)
+[ RUN      ] TestAllocator3/1.downing_test_10
+[       OK ] TestAllocator3/1.downing_test_10 (0 ms)
+[----------] 4 tests from TestAllocator3/1 (0 ms total)
+
+[----------] 4 tests from TestAllocator3/2, where TypeParam = Allocator<double, 200ul>
+[ RUN      ] TestAllocator3/2.left_coalesce_test
+[       OK ] TestAllocator3/2.left_coalesce_test (0 ms)
+[ RUN      ] TestAllocator3/2.right_coalesce_test
+[       OK ] TestAllocator3/2.right_coalesce_test (0 ms)
+[ RUN      ] TestAllocator3/2.dual_coalesce_test
+[       OK ] TestAllocator3/2.dual_coalesce_test (0 ms)
+[ RUN      ] TestAllocator3/2.downing_test_10
+[       OK ] TestAllocator3/2.downing_test_10 (0 ms)
+[----------] 4 tests from TestAllocator3/2 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 28 tests from 10 test cases ran. (1 ms total)
+[  PASSED  ] 28 tests.
+==24926== 
+==24926== HEAP SUMMARY:
+==24926==     in use at exit: 0 bytes in 0 blocks
+==24926==   total heap usage: 1,230 allocs, 1,230 frees, 156,822 bytes allocated
+==24926== 
+==24926== All heap blocks were freed -- no leaks are possible
+==24926== 
+==24926== For counts of detected and suppressed errors, rerun with: -v
+==24926== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'TestAllocator.c++'
+Lines executed:90.99% of 111
+Branches executed:63.75% of 822
+Taken at least once:32.60% of 822
+Calls executed:50.28% of 714
