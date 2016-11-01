@@ -1,0 +1,97 @@
+==12560== Memcheck, a memory error detector
+==12560== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==12560== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==12560== Command: ./TestAllocator
+==12560== 
+Running main() from gtest_main.cc
+[==========] Running 19 tests from 11 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from Testmy_allocator1/0, where TypeParam = std::allocator<int>
+[ RUN      ] Testmy_allocator1/0.test_1
+[       OK ] Testmy_allocator1/0.test_1 (8 ms)
+[ RUN      ] Testmy_allocator1/0.test_10
+[       OK ] Testmy_allocator1/0.test_10 (4 ms)
+[----------] 2 tests from Testmy_allocator1/0 (18 ms total)
+
+[----------] 2 tests from Testmy_allocator1/1, where TypeParam = std::allocator<double>
+[ RUN      ] Testmy_allocator1/1.test_1
+[       OK ] Testmy_allocator1/1.test_1 (4 ms)
+[ RUN      ] Testmy_allocator1/1.test_10
+[       OK ] Testmy_allocator1/1.test_10 (3 ms)
+[----------] 2 tests from Testmy_allocator1/1 (7 ms total)
+
+[----------] 2 tests from Testmy_allocator1/2, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] Testmy_allocator1/2.test_1
+[       OK ] Testmy_allocator1/2.test_1 (8 ms)
+[ RUN      ] Testmy_allocator1/2.test_10
+[       OK ] Testmy_allocator1/2.test_10 (3 ms)
+[----------] 2 tests from Testmy_allocator1/2 (11 ms total)
+
+[----------] 2 tests from Testmy_allocator1/3, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] Testmy_allocator1/3.test_1
+[       OK ] Testmy_allocator1/3.test_1 (7 ms)
+[ RUN      ] Testmy_allocator1/3.test_10
+[       OK ] Testmy_allocator1/3.test_10 (3 ms)
+[----------] 2 tests from Testmy_allocator1/3 (11 ms total)
+
+[----------] 3 tests from Testmy_allocator2
+[ RUN      ] Testmy_allocator2.const_index
+[       OK ] Testmy_allocator2.const_index (2 ms)
+[ RUN      ] Testmy_allocator2.both
+[       OK ] Testmy_allocator2.both (10 ms)
+[ RUN      ] Testmy_allocator2.awkward
+[       OK ] Testmy_allocator2.awkward (9 ms)
+[----------] 3 tests from Testmy_allocator2 (21 ms total)
+
+[----------] 2 tests from Testmy_allocator3/0, where TypeParam = my_allocator<int, 98ul>
+[ RUN      ] Testmy_allocator3/0.test_1
+[       OK ] Testmy_allocator3/0.test_1 (8 ms)
+[ RUN      ] Testmy_allocator3/0.test_10
+[       OK ] Testmy_allocator3/0.test_10 (2 ms)
+[----------] 2 tests from Testmy_allocator3/0 (10 ms total)
+
+[----------] 2 tests from Testmy_allocator3/1, where TypeParam = my_allocator<double, 98ul>
+[ RUN      ] Testmy_allocator3/1.test_1
+[       OK ] Testmy_allocator3/1.test_1 (7 ms)
+[ RUN      ] Testmy_allocator3/1.test_10
+[       OK ] Testmy_allocator3/1.test_10 (3 ms)
+[----------] 2 tests from Testmy_allocator3/1 (10 ms total)
+
+[----------] 1 test from Testmy_allocator4/0, where TypeParam = my_allocator<int, 1000ul>
+[ RUN      ] Testmy_allocator4/0.test_100
+[       OK ] Testmy_allocator4/0.test_100 (8 ms)
+[----------] 1 test from Testmy_allocator4/0 (8 ms total)
+
+[----------] 1 test from Testmy_allocator4/1, where TypeParam = my_allocator<double, 1000ul>
+[ RUN      ] Testmy_allocator4/1.test_100
+[       OK ] Testmy_allocator4/1.test_100 (8 ms)
+[----------] 1 test from Testmy_allocator4/1 (8 ms total)
+
+[----------] 1 test from Testmy_allocator4/2, where TypeParam = my_allocator<short, 1000ul>
+[ RUN      ] Testmy_allocator4/2.test_100
+[       OK ] Testmy_allocator4/2.test_100 (8 ms)
+[----------] 1 test from Testmy_allocator4/2 (8 ms total)
+
+[----------] 1 test from Testmy_allocator4/3, where TypeParam = my_allocator<long, 1000ul>
+[ RUN      ] Testmy_allocator4/3.test_100
+[       OK ] Testmy_allocator4/3.test_100 (8 ms)
+[----------] 1 test from Testmy_allocator4/3 (9 ms total)
+
+[----------] Global test environment tear-down
+[==========] 19 tests from 11 test cases ran. (143 ms total)
+[  PASSED  ] 19 tests.
+==12560== 
+==12560== HEAP SUMMARY:
+==12560==     in use at exit: 0 bytes in 0 blocks
+==12560==   total heap usage: 929 allocs, 929 frees, 127,374 bytes allocated
+==12560== 
+==12560== All heap blocks were freed -- no leaks are possible
+==12560== 
+==12560== For counts of detected and suppressed errors, rerun with: -v
+==12560== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'TestAllocator.c++'
+Lines executed:86.05% of 129
+Branches executed:60.00% of 880
+Taken at least once:32.27% of 880
+Calls executed:45.21% of 794
+Creating 'TestAllocator.c++.gcov'
