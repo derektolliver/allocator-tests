@@ -1,0 +1,145 @@
+==14905== Memcheck, a memory error detector
+==14905== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==14905== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==14905== Command: ./TestAllocator
+==14905== 
+Running main() from gtest_main.cc
+[==========] Running 37 tests from 11 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllocatorDowning
+[ RUN      ] TestAllocatorDowning.const_index
+[       OK ] TestAllocatorDowning.const_index (9 ms)
+[ RUN      ] TestAllocatorDowning.index
+[       OK ] TestAllocatorDowning.index (2 ms)
+[----------] 2 tests from TestAllocatorDowning (17 ms total)
+
+[----------] 4 tests from TestAllocator1
+[ RUN      ] TestAllocator1.good_constructor1
+[       OK ] TestAllocator1.good_constructor1 (5 ms)
+[ RUN      ] TestAllocator1.good_constructor2
+[       OK ] TestAllocator1.good_constructor2 (4 ms)
+[ RUN      ] TestAllocator1.bad_constructor1
+[       OK ] TestAllocator1.bad_constructor1 (33 ms)
+[ RUN      ] TestAllocator1.bad_constructor2
+[       OK ] TestAllocator1.bad_constructor2 (2 ms)
+[----------] 4 tests from TestAllocator1 (44 ms total)
+
+[----------] 3 tests from TestAllocator2
+[ RUN      ] TestAllocator2.validSimple
+[       OK ] TestAllocator2.validSimple (3 ms)
+[ RUN      ] TestAllocator2.validNotCoalesced
+[       OK ] TestAllocator2.validNotCoalesced (2 ms)
+[ RUN      ] TestAllocator2.validComplicated
+[       OK ] TestAllocator2.validComplicated (6 ms)
+[----------] 3 tests from TestAllocator2 (11 ms total)
+
+[----------] 7 tests from TestAllocator3
+[ RUN      ] TestAllocator3.bad_allocate_less_than_0
+[       OK ] TestAllocator3.bad_allocate_less_than_0 (3 ms)
+[ RUN      ] TestAllocator3.bad_allocate_greater_than_N
+[       OK ] TestAllocator3.bad_allocate_greater_than_N (3 ms)
+[ RUN      ] TestAllocator3.bad_allocate_no_space
+[       OK ] TestAllocator3.bad_allocate_no_space (3 ms)
+[ RUN      ] TestAllocator3.allocate_once
+[       OK ] TestAllocator3.allocate_once (5 ms)
+[ RUN      ] TestAllocator3.allocate_twice_split
+[       OK ] TestAllocator3.allocate_twice_split (9 ms)
+[ RUN      ] TestAllocator3.allocate_twice_whole
+[       OK ] TestAllocator3.allocate_twice_whole (9 ms)
+[ RUN      ] TestAllocator3.allocate_all
+[       OK ] TestAllocator3.allocate_all (15 ms)
+[----------] 7 tests from TestAllocator3 (48 ms total)
+
+[----------] 9 tests from TestAllocator4
+[ RUN      ] TestAllocator4.deallocate_good_pointer
+[       OK ] TestAllocator4.deallocate_good_pointer (5 ms)
+[ RUN      ] TestAllocator4.deallocate_bad_pointer1
+==14905== Conditional jump or move depends on uninitialised value(s)
+==14905==    at 0x423B04: my_allocator<int, 100ul>::deallocate(int*, unsigned long) (in /v/filer4b/v38q001/kmd/Documents/CS371p/allocator/dev/TestAllocator)
+==14905==    by 0x410C0F: TestAllocator4_deallocate_bad_pointer1_Test::TestBody() (in /v/filer4b/v38q001/kmd/Documents/CS371p/allocator/dev/TestAllocator)
+==14905==    by 0x458F32: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /v/filer4b/v38q001/kmd/Documents/CS371p/allocator/dev/TestAllocator)
+==14905==    by 0x44BA6C: testing::Test::Run() (in /v/filer4b/v38q001/kmd/Documents/CS371p/allocator/dev/TestAllocator)
+==14905==    by 0x44BB03: testing::TestInfo::Run() (in /v/filer4b/v38q001/kmd/Documents/CS371p/allocator/dev/TestAllocator)
+==14905==    by 0x44BC04: testing::TestCase::Run() (in /v/filer4b/v38q001/kmd/Documents/CS371p/allocator/dev/TestAllocator)
+==14905==    by 0x44BE7C: testing::internal::UnitTestImpl::RunAllTests() (in /v/filer4b/v38q001/kmd/Documents/CS371p/allocator/dev/TestAllocator)
+==14905==    by 0x44C15D: testing::UnitTest::Run() (in /v/filer4b/v38q001/kmd/Documents/CS371p/allocator/dev/TestAllocator)
+==14905==    by 0x40527F: main (in /v/filer4b/v38q001/kmd/Documents/CS371p/allocator/dev/TestAllocator)
+==14905== 
+[       OK ] TestAllocator4.deallocate_bad_pointer1 (4 ms)
+[ RUN      ] TestAllocator4.deallocate_bad_pointer2
+[       OK ] TestAllocator4.deallocate_bad_pointer2 (3 ms)
+[ RUN      ] TestAllocator4.deallocateSimple
+[       OK ] TestAllocator4.deallocateSimple (5 ms)
+[ RUN      ] TestAllocator4.deallocateCoalesceSimpleRight
+[       OK ] TestAllocator4.deallocateCoalesceSimpleRight (6 ms)
+[ RUN      ] TestAllocator4.deallocateCoalesceRight
+[       OK ] TestAllocator4.deallocateCoalesceRight (10 ms)
+[ RUN      ] TestAllocator4.deallocateCoalesceSimpleLeft
+[       OK ] TestAllocator4.deallocateCoalesceSimpleLeft (9 ms)
+[ RUN      ] TestAllocator4.deallocateCoalesceLeft
+[       OK ] TestAllocator4.deallocateCoalesceLeft (14 ms)
+[ RUN      ] TestAllocator4.deallocateNotAligned
+[       OK ] TestAllocator4.deallocateNotAligned (32 ms)
+[----------] 9 tests from TestAllocator4 (88 ms total)
+
+[----------] 2 tests from TestAllocator5/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllocator5/0.test_1
+[       OK ] TestAllocator5/0.test_1 (4 ms)
+[ RUN      ] TestAllocator5/0.test_10
+[       OK ] TestAllocator5/0.test_10 (4 ms)
+[----------] 2 tests from TestAllocator5/0 (8 ms total)
+
+[----------] 2 tests from TestAllocator5/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllocator5/1.test_1
+[       OK ] TestAllocator5/1.test_1 (5 ms)
+[ RUN      ] TestAllocator5/1.test_10
+[       OK ] TestAllocator5/1.test_10 (3 ms)
+[----------] 2 tests from TestAllocator5/1 (8 ms total)
+
+[----------] 2 tests from TestAllocator5/2, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator5/2.test_1
+[       OK ] TestAllocator5/2.test_1 (3 ms)
+[ RUN      ] TestAllocator5/2.test_10
+[       OK ] TestAllocator5/2.test_10 (3 ms)
+[----------] 2 tests from TestAllocator5/2 (6 ms total)
+
+[----------] 2 tests from TestAllocator5/3, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator5/3.test_1
+[       OK ] TestAllocator5/3.test_1 (11 ms)
+[ RUN      ] TestAllocator5/3.test_10
+[       OK ] TestAllocator5/3.test_10 (4 ms)
+[----------] 2 tests from TestAllocator5/3 (15 ms total)
+
+[----------] 2 tests from TestAllocator6/0, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator6/0.test_1
+[       OK ] TestAllocator6/0.test_1 (3 ms)
+[ RUN      ] TestAllocator6/0.test_10
+[       OK ] TestAllocator6/0.test_10 (2 ms)
+[----------] 2 tests from TestAllocator6/0 (6 ms total)
+
+[----------] 2 tests from TestAllocator6/1, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator6/1.test_1
+[       OK ] TestAllocator6/1.test_1 (3 ms)
+[ RUN      ] TestAllocator6/1.test_10
+[       OK ] TestAllocator6/1.test_10 (2 ms)
+[----------] 2 tests from TestAllocator6/1 (5 ms total)
+
+[----------] Global test environment tear-down
+[==========] 37 tests from 11 test cases ran. (283 ms total)
+[  PASSED  ] 37 tests.
+==14905== 
+==14905== HEAP SUMMARY:
+==14905==     in use at exit: 0 bytes in 0 blocks
+==14905==   total heap usage: 1,177 allocs, 1,177 frees, 152,367 bytes allocated
+==14905== 
+==14905== All heap blocks were freed -- no leaks are possible
+==14905== 
+==14905== For counts of detected and suppressed errors, rerun with: -v
+==14905== Use --track-origins=yes to see where uninitialised values come from
+==14905== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+File 'TestAllocator.c++'
+Lines executed:96.23% of 371
+Branches executed:51.01% of 2576
+Taken at least once:25.97% of 2576
+Calls executed:40.76% of 2554
+Creating 'TestAllocator.c++.gcov'
