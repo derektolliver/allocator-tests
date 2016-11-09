@@ -1,0 +1,101 @@
+Running main() from gtest_main.cc
+[==========] Running 31 tests from 11 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllocator1/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllocator1/0.test_1
+[       OK ] TestAllocator1/0.test_1 (0 ms)
+[ RUN      ] TestAllocator1/0.test_10
+[       OK ] TestAllocator1/0.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/0 (1 ms total)
+
+[----------] 2 tests from TestAllocator1/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllocator1/1.test_1
+[       OK ] TestAllocator1/1.test_1 (0 ms)
+[ RUN      ] TestAllocator1/1.test_10
+[       OK ] TestAllocator1/1.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/1 (2 ms total)
+
+[----------] 2 tests from TestAllocator1/2, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator1/2.test_1
+[       OK ] TestAllocator1/2.test_1 (0 ms)
+[ RUN      ] TestAllocator1/2.test_10
+[       OK ] TestAllocator1/2.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/2 (2 ms total)
+
+[----------] 2 tests from TestAllocator1/3, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator1/3.test_1
+[       OK ] TestAllocator1/3.test_1 (0 ms)
+[ RUN      ] TestAllocator1/3.test_10
+[       OK ] TestAllocator1/3.test_10 (0 ms)
+[----------] 2 tests from TestAllocator1/3 (5 ms total)
+
+[----------] 2 tests from TestAllocator2
+[ RUN      ] TestAllocator2.const_index
+[       OK ] TestAllocator2.const_index (0 ms)
+[ RUN      ] TestAllocator2.index
+[       OK ] TestAllocator2.index (0 ms)
+[----------] 2 tests from TestAllocator2 (3 ms total)
+
+[----------] 2 tests from TestAllocator3/0, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator3/0.test_1
+[       OK ] TestAllocator3/0.test_1 (0 ms)
+[ RUN      ] TestAllocator3/0.test_10
+[       OK ] TestAllocator3/0.test_10 (0 ms)
+[----------] 2 tests from TestAllocator3/0 (2 ms total)
+
+[----------] 2 tests from TestAllocator3/1, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator3/1.test_1
+[       OK ] TestAllocator3/1.test_1 (0 ms)
+[ RUN      ] TestAllocator3/1.test_10
+[       OK ] TestAllocator3/1.test_10 (0 ms)
+[----------] 2 tests from TestAllocator3/1 (4 ms total)
+
+[----------] 3 tests from TestAllocator4
+[ RUN      ] TestAllocator4.constructor_1
+[       OK ] TestAllocator4.constructor_1 (0 ms)
+[ RUN      ] TestAllocator4.constructor_2
+[       OK ] TestAllocator4.constructor_2 (0 ms)
+[ RUN      ] TestAllocator4.constructor_3
+[       OK ] TestAllocator4.constructor_3 (0 ms)
+[----------] 3 tests from TestAllocator4 (4 ms total)
+
+[----------] 3 tests from TestAllocator5
+[ RUN      ] TestAllocator5.valid_1
+[       OK ] TestAllocator5.valid_1 (0 ms)
+[ RUN      ] TestAllocator5.valid_2
+[       OK ] TestAllocator5.valid_2 (0 ms)
+[ RUN      ] TestAllocator5.valid_3
+[       OK ] TestAllocator5.valid_3 (0 ms)
+[----------] 3 tests from TestAllocator5 (4 ms total)
+
+[----------] 5 tests from TestAllocator6
+[ RUN      ] TestAllocator6.allocate_1
+[       OK ] TestAllocator6.allocate_1 (0 ms)
+[ RUN      ] TestAllocator6.allocate_2
+[       OK ] TestAllocator6.allocate_2 (0 ms)
+[ RUN      ] TestAllocator6.allocate_3
+[       OK ] TestAllocator6.allocate_3 (0 ms)
+[ RUN      ] TestAllocator6.allocate_4
+[       OK ] TestAllocator6.allocate_4 (0 ms)
+[ RUN      ] TestAllocator6.allocate_5
+[       OK ] TestAllocator6.allocate_5 (0 ms)
+[----------] 5 tests from TestAllocator6 (6 ms total)
+
+[----------] 6 tests from TestAllocator7
+[ RUN      ] TestAllocator7.deallocate_1
+[       OK ] TestAllocator7.deallocate_1 (0 ms)
+[ RUN      ] TestAllocator7.deallocate_2
+[       OK ] TestAllocator7.deallocate_2 (0 ms)
+[ RUN      ] TestAllocator7.deallocate_3
+[       OK ] TestAllocator7.deallocate_3 (0 ms)
+[ RUN      ] TestAllocator7.deallocate_4
+[       OK ] TestAllocator7.deallocate_4 (0 ms)
+[ RUN      ] TestAllocator7.deallocate_6
+[       OK ] TestAllocator7.deallocate_6 (0 ms)
+[ RUN      ] TestAllocator7.deallocate_7
+[       OK ] TestAllocator7.deallocate_7 (0 ms)
+[----------] 6 tests from TestAllocator7 (5 ms total)
+
+[----------] Global test environment tear-down
+[==========] 31 tests from 11 test cases ran. (51 ms total)
+[  PASSED  ] 31 tests.
