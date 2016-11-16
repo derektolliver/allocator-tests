@@ -1,0 +1,143 @@
+==871== Memcheck, a memory error detector
+==871== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==871== Using Valgrind-3.10.0 and LibVEX; rerun with -h for copyright info
+==871== Command: ./TestAllocator
+==871== 
+Running main() from gtest_main.cc
+[==========] Running 26 tests from 8 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from TestAllocator1/0, where TypeParam = std::allocator<int>
+[ RUN      ] TestAllocator1/0.test_1
+[       OK ] TestAllocator1/0.test_1 (39 ms)
+[ RUN      ] TestAllocator1/0.test_10
+[       OK ] TestAllocator1/0.test_10 (6 ms)
+[----------] 2 tests from TestAllocator1/0 (77 ms total)
+
+[----------] 2 tests from TestAllocator1/1, where TypeParam = std::allocator<double>
+[ RUN      ] TestAllocator1/1.test_1
+[       OK ] TestAllocator1/1.test_1 (9 ms)
+[ RUN      ] TestAllocator1/1.test_10
+[       OK ] TestAllocator1/1.test_10 (7 ms)
+[----------] 2 tests from TestAllocator1/1 (18 ms total)
+
+[----------] 2 tests from TestAllocator1/2, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator1/2.test_1
+[       OK ] TestAllocator1/2.test_1 (17 ms)
+[ RUN      ] TestAllocator1/2.test_10
+[       OK ] TestAllocator1/2.test_10 (6 ms)
+[----------] 2 tests from TestAllocator1/2 (25 ms total)
+
+[----------] 2 tests from TestAllocator1/3, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator1/3.test_1
+[       OK ] TestAllocator1/3.test_1 (17 ms)
+[ RUN      ] TestAllocator1/3.test_10
+[       OK ] TestAllocator1/3.test_10 (6 ms)
+[----------] 2 tests from TestAllocator1/3 (26 ms total)
+
+[----------] 2 tests from TestAllocator2
+[ RUN      ] TestAllocator2.const_index
+[       OK ] TestAllocator2.const_index (4 ms)
+[ RUN      ] TestAllocator2.index
+[       OK ] TestAllocator2.index (3 ms)
+[----------] 2 tests from TestAllocator2 (9 ms total)
+
+[----------] 2 tests from TestAllocator3/0, where TypeParam = my_allocator<int, 100ul>
+[ RUN      ] TestAllocator3/0.test_1
+[       OK ] TestAllocator3/0.test_1 (4 ms)
+[ RUN      ] TestAllocator3/0.test_10
+[       OK ] TestAllocator3/0.test_10 (3 ms)
+[----------] 2 tests from TestAllocator3/0 (11 ms total)
+
+[----------] 2 tests from TestAllocator3/1, where TypeParam = my_allocator<double, 100ul>
+[ RUN      ] TestAllocator3/1.test_1
+[       OK ] TestAllocator3/1.test_1 (5 ms)
+[ RUN      ] TestAllocator3/1.test_10
+[       OK ] TestAllocator3/1.test_10 (4 ms)
+[----------] 2 tests from TestAllocator3/1 (16 ms total)
+
+[----------] 12 tests from TestAllocator4
+[ RUN      ] TestAllocator4.valid_1
+[       OK ] TestAllocator4.valid_1 (5 ms)
+[ RUN      ] TestAllocator4.valid_2
+[       OK ] TestAllocator4.valid_2 (9 ms)
+[ RUN      ] TestAllocator4.valid_3
+[       OK ] TestAllocator4.valid_3 (4 ms)
+[ RUN      ] TestAllocator4.constructor_1
+[       OK ] TestAllocator4.constructor_1 (3 ms)
+[ RUN      ] TestAllocator4.constructor_2
+[       OK ] TestAllocator4.constructor_2 (7 ms)
+[ RUN      ] TestAllocator4.constructor_3
+[       OK ] TestAllocator4.constructor_3 (7 ms)
+[ RUN      ] TestAllocator4.allocate_1
+[       OK ] TestAllocator4.allocate_1 (7 ms)
+[ RUN      ] TestAllocator4.allocate_2
+[       OK ] TestAllocator4.allocate_2 (5 ms)
+[ RUN      ] TestAllocator4.allocate_3
+[       OK ] TestAllocator4.allocate_3 (12 ms)
+[ RUN      ] TestAllocator4.deallocate_1
+[       OK ] TestAllocator4.deallocate_1 (5 ms)
+[ RUN      ] TestAllocator4.deallocate_2
+==871== Conditional jump or move depends on uninitialised value(s)
+==871==    at 0x40FFE4: my_allocator<int, 500ul>::deallocate(int*, unsigned long) (in /usr/cs371p/TestAllocator)
+==871==    by 0x40A284: TestAllocator4_deallocate_2_Test::TestBody() (in /usr/cs371p/TestAllocator)
+==871==    by 0x4439A5: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/cs371p/TestAllocator)
+==871==    by 0x43ED05: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/cs371p/TestAllocator)
+==871==    by 0x4259FD: testing::Test::Run() (in /usr/cs371p/TestAllocator)
+==871==    by 0x42620D: testing::TestInfo::Run() (in /usr/cs371p/TestAllocator)
+==871==    by 0x4268B4: testing::TestCase::Run() (in /usr/cs371p/TestAllocator)
+==871==    by 0x42D34E: testing::internal::UnitTestImpl::RunAllTests() (in /usr/cs371p/TestAllocator)
+==871==    by 0x444DAF: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/cs371p/TestAllocator)
+==871==    by 0x43FAE5: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/cs371p/TestAllocator)
+==871==    by 0x42BF2A: testing::UnitTest::Run() (in /usr/cs371p/TestAllocator)
+==871==    by 0x44E2D0: RUN_ALL_TESTS() (in /usr/cs371p/TestAllocator)
+==871== 
+[       OK ] TestAllocator4.deallocate_2 (64 ms)
+[ RUN      ] TestAllocator4.deallocate_3
+==871== Conditional jump or move depends on uninitialised value(s)
+==871==    at 0x40F4C8: my_allocator<int, 100ul>::deallocate(int*, unsigned long) (in /usr/cs371p/TestAllocator)
+==871==    by 0x40A642: TestAllocator4_deallocate_3_Test::TestBody() (in /usr/cs371p/TestAllocator)
+==871==    by 0x4439A5: void testing::internal::HandleSehExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/cs371p/TestAllocator)
+==871==    by 0x43ED05: void testing::internal::HandleExceptionsInMethodIfSupported<testing::Test, void>(testing::Test*, void (testing::Test::*)(), char const*) (in /usr/cs371p/TestAllocator)
+==871==    by 0x4259FD: testing::Test::Run() (in /usr/cs371p/TestAllocator)
+==871==    by 0x42620D: testing::TestInfo::Run() (in /usr/cs371p/TestAllocator)
+==871==    by 0x4268B4: testing::TestCase::Run() (in /usr/cs371p/TestAllocator)
+==871==    by 0x42D34E: testing::internal::UnitTestImpl::RunAllTests() (in /usr/cs371p/TestAllocator)
+==871==    by 0x444DAF: bool testing::internal::HandleSehExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/cs371p/TestAllocator)
+==871==    by 0x43FAE5: bool testing::internal::HandleExceptionsInMethodIfSupported<testing::internal::UnitTestImpl, bool>(testing::internal::UnitTestImpl*, bool (testing::internal::UnitTestImpl::*)(), char const*) (in /usr/cs371p/TestAllocator)
+==871==    by 0x42BF2A: testing::UnitTest::Run() (in /usr/cs371p/TestAllocator)
+==871==    by 0x44E2D0: RUN_ALL_TESTS() (in /usr/cs371p/TestAllocator)
+==871== 
+[       OK ] TestAllocator4.deallocate_3 (12 ms)
+[----------] 12 tests from TestAllocator4 (178 ms total)
+
+[----------] Global test environment tear-down
+[==========] 26 tests from 8 test cases ran. (462 ms total)
+[  PASSED  ] 26 tests.
+==871== 
+==871== HEAP SUMMARY:
+==871==     in use at exit: 72,704 bytes in 1 blocks
+==871==   total heap usage: 677 allocs, 676 frees, 188,123 bytes allocated
+==871== 
+==871== LEAK SUMMARY:
+==871==    definitely lost: 0 bytes in 0 blocks
+==871==    indirectly lost: 0 bytes in 0 blocks
+==871==      possibly lost: 0 bytes in 0 blocks
+==871==    still reachable: 72,704 bytes in 1 blocks
+==871==         suppressed: 0 bytes in 0 blocks
+==871== Rerun with --leak-check=full to see details of leaked memory
+==871== 
+==871== For counts of detected and suppressed errors, rerun with: -v
+==871== Use --track-origins=yes to see where uninitialised values come from
+==871== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+File 'Allocator.h'
+Lines executed:92.68% of 82
+Branches executed:81.82% of 264
+Taken at least once:52.27% of 264
+Calls executed:48.54% of 239
+Creating 'Allocator.h.gcov'
+File 'TestAllocator.c++'
+Lines executed:91.43% of 140
+Branches executed:61.50% of 800
+Taken at least once:32.25% of 800
+Calls executed:51.85% of 812
+Creating 'TestAllocator.c++.gcov'
